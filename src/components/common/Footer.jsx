@@ -5,6 +5,8 @@ import {
   CLINIC,
   OPD,
   BOOKING_URL,
+  SOCIAL,
+  BOOK,
   addressOneLine,
 } from "../../data/site";
 import "../../styles/Footer.css";
@@ -28,6 +30,21 @@ const Footer = () => {
             <p className="site-footer-text">
               {DOCTOR.registrationCouncil} registration {DOCTOR.registration}
             </p>
+
+            <ul className="site-footer-social">
+              {SOCIAL.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${DOCTOR.name} on ${item.label}`}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="site-footer-block">
@@ -37,8 +54,6 @@ const Footer = () => {
               {CLINIC.addressLine1}
               <br />
               {CLINIC.addressLine2}
-              <br />
-              {CLINIC.landmark}
               <br />
               {CLINIC.city} {CLINIC.postalCode}, {CLINIC.state}
             </address>
@@ -84,6 +99,13 @@ const Footer = () => {
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 Book an Appointment
               </a>
+              <a
+                href={BOOK.amazonUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {BOOK.title}, her book
+              </a>
             </nav>
           </div>
         </div>
@@ -98,6 +120,21 @@ const Footer = () => {
             The information on this website is general guidance for parents. It
             does not replace a consultation. If your child is unwell, please see
             a doctor.
+          </p>
+
+          <p className="site-footer-credit">
+            Made with{" "}
+            <span className="site-footer-heart" aria-label="love" role="img">
+              ♥
+            </span>{" "}
+            by{" "}
+            <a
+              href="https://caspianstudio.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Caspian Studio
+            </a>
           </p>
         </div>
       </div>

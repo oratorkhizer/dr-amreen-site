@@ -719,3 +719,9 @@
     font-size: 32px;
   }
 }
+.about-book-link {
+  color: inherit;
+  font-weight: var(--weight-bold);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

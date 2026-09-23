@@ -35,16 +35,18 @@ export const DOCTOR = {
 
 export const CLINIC = {
   name: "Caspian Healthcare",
-  addressLine1: "10-3-761/8, First Floor, Unit-2",
-  addressLine2: "Ahmed Plaza, Vijaya Nagar Colony",
-  landmark: "Opp. Post Office",
+  // Printed exactly as Dr. Khizer gave it. Do not add a floor, a unit or a
+  // building name, and do not "correct" the spelling of Vijaynagar.
+  addressLine1: "10-3-761/8, Opp. Post Office",
+  addressLine2: "Vijaynagar Colony",
   city: "Hyderabad",
   state: "Telangana",
   postalCode: "500057",
   country: "IN",
   phone: "8919341154",
   phoneE164: "+918919341154",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Caspian+Healthcare+Vijaya+Nagar+Colony+Hyderabad",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Caspian+Healthcare+Vijaynagar+Colony+Hyderabad+500057",
   website: "https://caspianhealthcare.in",
 };
 
@@ -78,6 +80,49 @@ export const BOOKING_URL =
 export const GOOGLE_REVIEWS_URL =
   "https://www.eka.care/doctor/dr-amreen-pediatrician";
 
+// Her book. Details taken from the Amazon listing, printed as published.
+export const BOOK = {
+  title: "Dear Mama",
+  subtitle: "The Fourth Trimester",
+  strapline:
+    "Navigating motherhood with a pediatrician and mom of 3 by your side",
+  author: "Dr. Amreen",
+  publisher: "Notion Press",
+  published: "29 November 2025",
+  pages: 116,
+  isbn: "979-8901366028",
+  cover: "/assets/images/clinic/dear-mama-cover.jpg",
+  amazonUrl: "https://www.amazon.in/dp/B0G4H7ZK75",
+  // Publisher's description, quoted from the listing.
+  blurb:
+    "As mothers, what we most need in the thick of it is guidance that feels like beloved companionship: steady, reassuring, and grounded in real understanding. This book tries to do just that.",
+};
+
+// Verified live in September 2026. yourdramreen.com and the YouTube channel
+// on her Linktree are both dead, so they are deliberately not listed here.
+export const SOCIAL = [
+  {
+    label: "Instagram",
+    handle: "@yourdramreen",
+    url: "https://www.instagram.com/yourdramreen/",
+  },
+  {
+    label: "Facebook",
+    handle: "Dr. Amreen",
+    url: "https://www.facebook.com/YourDrAmreen",
+  },
+  {
+    label: "LinkedIn",
+    handle: "yourdramreen",
+    url: "https://www.linkedin.com/in/yourdramreen",
+  },
+  {
+    label: "X",
+    handle: "@YourDrAmreen",
+    url: "https://twitter.com/YourDrAmreen",
+  },
+];
+
 export const SUPABASE = {
   url: "https://grxgmheazdfcbortpygr.supabase.co",
   anonKey:
@@ -89,6 +134,10 @@ export const SUPABASE = {
 export const addressOneLine = [
   CLINIC.addressLine1,
   CLINIC.addressLine2,
-  CLINIC.landmark,
   `${CLINIC.city} ${CLINIC.postalCode}`,
+  CLINIC.state,
 ].join(", ");
+
+// Caspian Healthcare does not yet run a paediatric inpatient ward or a
+// paediatric emergency. Nothing on this site may imply that it does.
+export const HAS_PAEDIATRIC_INPATIENT = false;

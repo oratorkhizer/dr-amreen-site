@@ -1,5 +1,5 @@
 import React from "react";
-import { DOCTOR, CLINIC, OPD } from "../data/site";
+import { DOCTOR, CLINIC, OPD, BOOK } from "../data/site";
 import { NavLink } from "react-router-dom";
 import "../styles/About.css";
 
@@ -255,7 +255,7 @@ const About = () => {
 
               <p>
                 {DOCTOR.name} is a {DOCTOR.speciality.toLowerCase()} at{" "}
-                {CLINIC.name}, Vijaya Nagar Colony, Hyderabad. She took her MBBS
+                {CLINIC.name}, Vijaynagar Colony, Hyderabad. She took her MBBS
                 at Gandhi Medical College and her MD in Pediatrics at Osmania
                 Medical College and Niloufer Hospital, where she was a gold
                 medallist. She is a Fellow of the Academy of General Education,
@@ -263,8 +263,22 @@ const About = () => {
               </p>
 
               <p>
-                Her OPD runs {OPD.days}, {OPD.hours}, and children who need
-                admission can be admitted at {CLINIC.name}.
+                Her OPD runs {OPD.days}, {OPD.hours}. Consultations are by
+                appointment, booked online.
+              </p>
+
+              <p>
+                She is the author of{" "}
+                <a
+                  className="about-book-link"
+                  href={BOOK.amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {BOOK.title}: {BOOK.subtitle}
+                </a>
+                , a book for new mothers on the first months after birth,
+                published by {BOOK.publisher} in 2025.
               </p>
             </div>
 
