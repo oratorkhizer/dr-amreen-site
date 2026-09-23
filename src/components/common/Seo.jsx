@@ -33,8 +33,17 @@ const Seo = () => {
 
     document.title = meta.title;
 
+    // An unknown path must not be indexed under the home page's canonical.
+    setMeta(
+      'meta[name="robots"]',
+      "content",
+      meta.path === null ? "noindex" : "index, follow, max-image-preview:large"
+    );
+
     setMeta('meta[name="description"]', "content", meta.description);
-    setMeta('link[rel="canonical"]', "href", canonical);
+    if (meta.path !== null) {
+      setMeta('link[rel="canonical"]', "href", canonical);
+    }
     setMeta('meta[property="og:title"]', "content", meta.title);
     setMeta('meta[property="og:description"]', "content", meta.description);
     setMeta('meta[property="og:url"]', "content", canonical);

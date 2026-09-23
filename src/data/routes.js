@@ -73,5 +73,12 @@ export const ROUTES = [
   },
 ];
 
+export const NOT_FOUND = {
+  path: null,
+  title: "Page not found | Dr. Amreen, Pediatrician, Hyderabad",
+  description:
+    "This page does not exist. Find Dr. Amreen's clinic address, OPD timings and booking link at Caspian Healthcare, Vijaya Nagar Colony, Hyderabad.",
+};
+
 export const routeMeta = (pathname) =>
-  ROUTES.find((route) => route.path === pathname) || ROUTES[0];
+  ROUTES.find((route) => route.path === pathname) || NOT_FOUND;
