@@ -64,6 +64,19 @@ for (const route of routes) {
   written += 1;
 }
 
+// Unknown URLs: Vercel serves 404.html with a real 404 status, and React
+// Router renders the branded not-found page inside it. That beats a soft 404
+// from an SPA catch-all rewrite, which Google treats as a duplicate page.
+writeFileSync(
+  join(dist, "404.html"),
+  shell
+    .replace(/<title>[\s\S]*?<\/title>/, "<title>Page not found | Dr. Amreen, Pediatrician</title>")
+    .replace(
+      /<meta\s+name="robots"[\s\S]*?\/>/,
+      '<meta name="robots" content="noindex" />'
+    )
+);
+
 const today = new Date().toISOString().slice(0, 10);
 
 writeFileSync(
