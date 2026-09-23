@@ -1,0 +1,12 @@
+{
+  "name": "Dr. Amreen Hamza, Pediatrician",
+  "short_name": "Dr. Amreen",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fcfb",
+  "theme_color": "#2f8581",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

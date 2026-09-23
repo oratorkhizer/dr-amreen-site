@@ -1,0 +1,125 @@
+.enquiries-page {
+  background: var(--color-background);
+  min-height: 100vh;
+  padding: 170px 0 80px;
+}
+
+.enquiries-container {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.enquiries-title {
+  font-size: var(--font-4xl);
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: 0 0 28px;
+}
+
+.enquiries-gate {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.enquiries-gate label {
+  font-size: var(--font-md);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.enquiries-gate input,
+.enquiries-toolbar input {
+  border: 1px solid var(--color-border-dark);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: var(--font-md);
+  color: var(--color-heading);
+  background: var(--color-white);
+}
+
+.enquiries-gate button,
+.enquiries-toolbar button {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  border: none;
+  border-radius: 999px;
+  padding: 13px 24px;
+  font: inherit;
+  font-weight: 700;
+  font-size: var(--font-md);
+  cursor: pointer;
+}
+
+.enquiries-error {
+  color: var(--color-error);
+  font-size: var(--font-md);
+  margin: 0;
+}
+
+.enquiries-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.enquiries-toolbar input { flex: 1 1 240px; }
+
+.enquiries-count {
+  font-size: var(--font-md);
+  color: var(--color-text);
+}
+
+.enquiries-list { list-style: none; margin: 0; padding: 0; }
+
+.enquiries-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 14px;
+}
+
+.enquiries-item-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: var(--font-md);
+  color: var(--color-text);
+}
+
+.enquiries-item-head strong {
+  font-size: var(--font-lg);
+  color: var(--color-heading);
+}
+
+.enquiries-tag {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: var(--font-sm);
+  font-weight: 700;
+}
+
+.enquiries-email { font-size: var(--font-md); color: var(--color-primary-dark); }
+
+.enquiries-message {
+  margin: 8px 0 0;
+  font-size: var(--font-lg);
+  line-height: 1.7;
+  color: var(--color-text);
+  white-space: pre-wrap;
+}
+
+.enquiries-empty { font-size: var(--font-lg); color: var(--color-text); }

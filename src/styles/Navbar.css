@@ -1,0 +1,516 @@
+.navbar-head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4) var(--container-padding) 0;
+  z-index: var(--z-navbar);
+  pointer-events: none;
+}
+
+.navbar-container {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-width);
+  min-height: var(--header-height);
+  margin: 0 auto;
+  padding: 0 var(--space-3) 0 var(--space-5);
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 10px 35px rgba(21, 41, 75, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  pointer-events: auto;
+}
+
+.navbar-brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.navbar-brand-mark {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 17px;
+  background: var(--color-primary-light);
+  transform: rotate(-4deg);
+  transition: var(--transition-normal);
+}
+
+.navbar-brand:hover .navbar-brand-mark {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.navbar-brand-circle {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.navbar-brand-cross {
+  position: absolute;
+  width: 14px;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+}
+
+.navbar-brand-cross-vertical {
+  position: absolute;
+  width: 4px;
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+}
+
+.navbar-brand-dot {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+}
+
+.navbar-brand-dot-one {
+  width: 7px;
+  height: 7px;
+  top: 4px;
+  right: 5px;
+  background: var(--color-secondary);
+}
+
+.navbar-brand-dot-two {
+  width: 5px;
+  height: 5px;
+  left: 5px;
+  bottom: 7px;
+  background: var(--color-mint);
+}
+
+.navbar-brand-dot-three {
+  width: 4px;
+  height: 4px;
+  right: 10px;
+  bottom: 5px;
+  background: var(--color-sky);
+}
+
+.navbar-brand-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navbar-brand-name {
+  color: var(--color-heading);
+  font-family: var(--font-serif);
+  font-size: var(--font-xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-tight);
+  letter-spacing: -0.02em;
+}
+
+.navbar-brand-speciality {
+  color: var(--color-primary);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.navbar-navigation {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: auto;
+  margin-right: var(--space-8);
+}
+
+.navbar-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 13px;
+  color: var(--color-text-light);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--transition-normal);
+}
+
+.navbar-link:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.navbar-link-active {
+  color: var(--color-primary);
+}
+
+.navbar-link-active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  transform: translateX(-50%);
+}
+
+.navbar-appointment {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 50px;
+  padding: 0 var(--space-2) 0 var(--space-3);
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  box-shadow: var(--shadow-primary);
+  transition: var(--transition-normal);
+}
+
+.navbar-appointment:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary);
+}
+
+.navbar-appointment-icon {
+  width: 29px;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+}
+
+.navbar-appointment-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.navbar-appointment-text {
+  font-size: var(--font-sm);
+  font-weight: var(--weight-bold);
+  white-space: nowrap;
+}
+
+.navbar-appointment-arrow {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: var(--color-white);
+  border-radius: 10px;
+  font-size: var(--font-lg);
+  transition: var(--transition-normal);
+}
+
+.navbar-appointment:hover .navbar-appointment-arrow {
+  transform: translateX(3px);
+}
+
+.navbar-menu-button {
+  display: none;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-primary-light);
+  cursor: pointer;
+}
+
+.navbar-menu-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  transition: var(--transition-normal);
+}
+
+.navbar-menu-button-active .navbar-menu-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-menu-button-active .navbar-menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-menu-button-active .navbar-menu-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.navbar-mobile-panel {
+  display: none;
+}
+
+.navbar-decoration {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.navbar-decoration-one {
+  width: 8px;
+  height: 8px;
+  top: 9px;
+  left: 20%;
+  background: var(--color-secondary);
+  opacity: 0.75;
+}
+
+.navbar-decoration-two {
+  width: 6px;
+  height: 6px;
+  top: 42px;
+  right: 20%;
+  background: var(--color-mint);
+  opacity: 0.8;
+}
+
+.navbar-decoration-three {
+  width: 4px;
+  height: 4px;
+  bottom: -4px;
+  left: 32%;
+  background: var(--color-sky);
+  opacity: 0.8;
+}
+
+@media (max-width: 1180px) {
+  .navbar-navigation {
+    margin-right: var(--space-4);
+  }
+
+  .navbar-link {
+    padding-left: 9px;
+    padding-right: 9px;
+    font-size: var(--font-xs);
+  }
+
+  .navbar-appointment-text {
+    font-size: var(--font-xs);
+  }
+}
+
+@media (max-width: 950px) {
+  .navbar-navigation {
+    display: none;
+  }
+
+  .navbar-appointment {
+    margin-left: auto;
+    margin-right: var(--space-3);
+  }
+
+  .navbar-menu-button {
+    display: flex;
+  }
+
+  .navbar-decoration {
+    display: none;
+  }
+
+  .navbar-mobile-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: var(--container-padding);
+    right: var(--container-padding);
+    display: block;
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--space-3);
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition:
+      opacity var(--transition-normal),
+      visibility var(--transition-normal),
+      transform var(--transition-normal);
+  }
+
+  .navbar-mobile-panel-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .navbar-mobile-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .navbar-mobile-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    padding: 0 var(--space-4);
+    color: var(--color-text);
+    border-radius: var(--radius-md);
+    font-size: var(--font-sm);
+    font-weight: var(--weight-semibold);
+    text-decoration: none;
+    transition: var(--transition-normal);
+  }
+
+  .navbar-mobile-link:hover {
+    color: var(--color-primary);
+    background: var(--color-primary-soft);
+  }
+
+  .navbar-mobile-link-active {
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+  }
+
+  .navbar-mobile-link-arrow {
+    color: var(--color-primary);
+    font-size: var(--font-lg);
+    opacity: 0.7;
+  }
+
+  .navbar-mobile-appointment {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-2);
+    padding: 0 var(--space-4);
+    color: var(--color-white);
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+    font-size: var(--font-sm);
+    font-weight: var(--weight-bold);
+    text-decoration: none;
+    box-shadow: var(--shadow-primary);
+  }
+
+  .navbar-mobile-appointment-arrow {
+    font-size: var(--font-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-head {
+    padding-top: var(--space-3);
+  }
+
+  .navbar-container {
+    min-height: 68px;
+    padding-left: var(--space-3);
+    padding-right: var(--space-2);
+    border-radius: var(--radius-lg);
+    justify-content: space-between;
+  }
+
+  .navbar-brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
+  .navbar-brand-circle {
+    width: 25px;
+    height: 25px;
+  }
+
+  .navbar-brand-cross {
+    width: 12px;
+    height: 3px;
+  }
+
+  .navbar-brand-cross-vertical {
+    width: 3px;
+    height: 12px;
+  }
+
+  .navbar-brand-name {
+    font-size: var(--font-lg);
+  }
+
+  .navbar-brand-speciality {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .navbar-appointment {
+    display: none;
+  }
+
+  .navbar-menu-button {
+    width: 43px;
+    height: 43px;
+  }
+
+  .navbar-mobile-panel {
+    left: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-brand-content {
+    gap: 1px;
+  }
+
+  .navbar-brand-name {
+    font-size: var(--font-md);
+  }
+
+  .navbar-brand-speciality {
+    font-size: 8px;
+  }
+
+  .navbar-brand-mark {
+    width: 39px;
+    height: 39px;
+  }
+
+  .navbar-menu-button {
+    width: 40px;
+    height: 40px;
+  }
+}

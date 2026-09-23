@@ -1,0 +1,119 @@
+.site-footer {
+  background: var(--color-primary-deep);
+  color: var(--color-white);
+  padding: 72px 0 40px;
+  margin-top: 0;
+}
+
+.site-footer-container {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 0.9fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.site-footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer-name {
+  font-family: var(--font-primary);
+  font-size: var(--font-xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.site-footer-speciality {
+  font-size: var(--font-md);
+  color: #bfe3df;
+}
+
+.site-footer-heading {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ed8d0;
+  margin: 0 0 4px;
+}
+
+.site-footer-text,
+.site-footer-address {
+  font-size: var(--font-md);
+  line-height: 1.7;
+  color: #dcefed;
+  font-style: normal;
+  margin: 0;
+}
+
+.site-footer-small {
+  font-size: var(--font-sm);
+  line-height: 1.65;
+  color: #b6d8d4;
+  margin: 0;
+}
+
+.site-footer-link,
+.site-footer-navigation a {
+  color: var(--color-white);
+  font-size: var(--font-md);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  width: fit-content;
+  border-radius: 4px;
+}
+
+.site-footer-link:hover,
+.site-footer-navigation a:hover {
+  text-decoration-color: var(--color-white);
+}
+
+.site-footer-link:focus-visible,
+.site-footer-navigation a:focus-visible {
+  outline: 3px solid var(--color-yellow);
+  outline-offset: 3px;
+}
+
+.site-footer-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 28px;
+}
+
+@media (max-width: 950px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    padding: 48px 0 32px;
+  }
+
+  .site-footer-container {
+    width: calc(100% - 32px);
+  }
+
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

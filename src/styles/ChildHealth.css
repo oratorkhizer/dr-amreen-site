@@ -1,0 +1,717 @@
+.child-health {
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+.child-health-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.child-health-hero {
+  position: relative;
+  padding: 90px 0 110px;
+  background: var(--color-white);
+}
+
+.child-health-hero-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 35px auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.child-health-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.child-health-hero-eyebrow,
+.child-health-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.child-health-hero-eyebrow::before,
+.child-health-section-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--color-secondary);
+}
+
+.child-health-hero-title {
+  max-width: 620px;
+  margin: 22px 0 25px;
+  color: var(--color-heading);
+  font-size: clamp(48px, 5.5vw, 76px);
+  font-weight: var(--weight-extrabold);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.child-health-hero-title span {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: var(--weight-bold);
+}
+
+.child-health-hero-description {
+  max-width: 570px;
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-md);
+  line-height: var(--line-relaxed);
+}
+
+.child-health-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 38px;
+}
+
+.child-health-hero-button,
+.child-health-parent-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 15px 19px 15px 23px;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-sm);
+  font-weight: var(--weight-bold);
+  transition: var(--transition-normal);
+}
+
+.child-health-hero-button span:last-child,
+.child-health-parent-button span:last-child {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+}
+
+.child-health-hero-button:hover,
+.child-health-parent-button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.child-health-hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-heading);
+  font-size: var(--font-sm);
+  font-weight: var(--weight-bold);
+}
+
+.child-health-hero-link span {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+.child-health-hero-visual {
+  position: relative;
+  min-height: 570px;
+}
+
+.child-health-hero-image-main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 78%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 170px 35px 170px 35px;
+  background: var(--color-primary-soft);
+}
+
+.child-health-hero-image-main img,
+.child-health-hero-image-small img,
+.child-health-feature-image img,
+.child-health-parent-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.child-health-hero-image-small {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 225px;
+  height: 245px;
+  overflow: hidden;
+  border: 10px solid var(--color-white);
+  border-radius: 25px 100px 25px 100px;
+  background: var(--color-primary-soft);
+  box-shadow: var(--shadow-lg);
+}
+
+.child-health-hero-note {
+  position: absolute;
+  right: 5%;
+  bottom: 35px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 20px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.child-health-hero-note-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 50%;
+  font-size: 23px;
+}
+
+.child-health-hero-note div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.child-health-hero-note strong {
+  color: var(--color-heading);
+  font-size: var(--font-xs);
+}
+
+.child-health-hero-note span:last-child {
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.child-health-hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.child-health-hero-shape-one {
+  width: 80px;
+  height: 80px;
+  top: 20px;
+  left: 10%;
+  border: 2px dashed var(--color-secondary);
+}
+
+.child-health-hero-shape-two {
+  width: 16px;
+  height: 16px;
+  right: 2%;
+  top: 40%;
+  background: var(--color-secondary);
+}
+
+.child-health-intro {
+  padding: 110px 0;
+  background: var(--color-primary);
+}
+
+.child-health-intro .child-health-container {
+  display: grid;
+  grid-template-columns: 0.32fr 1fr;
+  gap: 80px;
+}
+
+.child-health-intro-label {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.child-health-intro-label span:first-child {
+  color: var(--color-secondary);
+  font-size: 38px;
+  letter-spacing: -0.04em;
+}
+
+.child-health-intro-content {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 70px;
+}
+
+.child-health-intro-content h2 {
+  margin: 0;
+  color: var(--color-white);
+  font-size: clamp(36px, 4vw, 55px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.child-health-intro-content h2 span {
+  display: block;
+  color: var(--color-secondary);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.child-health-intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.child-health-intro-text p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: var(--font-md);
+  line-height: var(--line-relaxed);
+}
+
+.child-health-topics {
+  padding: 115px 0;
+  background: var(--color-background);
+}
+
+.child-health-section-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 60px;
+}
+
+.child-health-section-heading h2 {
+  margin: 20px 0 0;
+  color: var(--color-heading);
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.child-health-section-heading h2 span {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.child-health-section-heading > p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-md);
+  line-height: var(--line-relaxed);
+}
+
+.child-health-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.child-health-topic-card {
+  min-height: 320px;
+  padding: 30px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  transition: var(--transition-normal);
+}
+
+.child-health-topic-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+.child-health-topic-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  color: var(--color-primary);
+  font-size: var(--font-sm);
+  font-weight: var(--weight-bold);
+}
+
+.child-health-topic-card-top span:last-child {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border-radius: 50%;
+}
+
+.child-health-topic-card h3 {
+  margin: 0 0 15px;
+  color: var(--color-heading);
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+.child-health-topic-card p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-sm);
+  line-height: 1.7;
+}
+
+.child-health-feature {
+  padding: 110px 0;
+  background: var(--color-white);
+}
+
+.child-health-feature-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.child-health-feature-image {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 30px 150px 30px 150px;
+  background: var(--color-primary-soft);
+}
+
+.child-health-feature-image-caption {
+  position: absolute;
+  left: 80px;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+  color: var(--color-white);
+  background: rgba(21, 41, 75, 0.72);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.child-health-feature-image-caption span {
+  font-size: var(--font-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.child-health-feature-image-caption strong {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-style: italic;
+}
+
+.child-health-feature-content h2 {
+  margin: 20px 0;
+  color: var(--color-heading);
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.child-health-feature-content h2 span {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.child-health-feature-content > p {
+  max-width: 650px;
+  margin: 0 0 20px;
+  color: var(--color-text);
+  font-size: var(--font-md);
+  line-height: var(--line-relaxed);
+}
+
+.child-health-feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+  margin-top: 35px;
+}
+
+.child-health-feature-list div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+}
+
+.child-health-feature-list span {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.child-health-feature-list p {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-bold);
+}
+
+.child-health-parent {
+  padding: 110px 0;
+  background: var(--color-primary-soft);
+}
+
+.child-health-parent-box {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  min-height: 470px;
+  overflow: hidden;
+  background: var(--color-white);
+  border-radius: var(--radius-2xl);
+}
+
+.child-health-parent-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px;
+}
+
+.child-health-parent-content h2 {
+  max-width: 600px;
+  margin: 20px 0;
+  color: var(--color-heading);
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.child-health-parent-content h2 span {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.child-health-parent-content p {
+  max-width: 620px;
+  margin: 0 0 30px;
+  color: var(--color-text);
+  font-size: var(--font-md);
+  line-height: var(--line-relaxed);
+}
+
+.child-health-parent-button {
+  align-self: flex-start;
+}
+
+.child-health-parent-image {
+  min-height: 470px;
+}
+
+@media (max-width: 1000px) {
+  .child-health-hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .child-health-hero-content {
+    max-width: 700px;
+  }
+
+  .child-health-hero-visual {
+    min-height: 550px;
+  }
+
+  .child-health-intro .child-health-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .child-health-intro-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .child-health-topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .child-health-feature-layout {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .child-health-feature-image {
+    height: 550px;
+  }
+
+  .child-health-parent-box {
+    grid-template-columns: 1fr;
+  }
+
+  .child-health-parent-image {
+    height: 450px;
+  }
+}
+
+@media (max-width: 700px) {
+  .child-health-hero {
+    padding: 65px 0 80px;
+  }
+
+  .child-health-hero-container {
+    gap: 50px;
+  }
+
+  .child-health-hero-title {
+    font-size: 48px;
+  }
+
+  .child-health-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .child-health-hero-visual {
+    min-height: 430px;
+  }
+
+  .child-health-hero-image-main {
+    width: 84%;
+    height: 380px;
+    border-radius: 110px 25px 110px 25px;
+  }
+
+  .child-health-hero-image-small {
+    width: 150px;
+    height: 170px;
+    border-width: 7px;
+  }
+
+  .child-health-hero-note {
+    right: 0;
+    bottom: 10px;
+    padding: 12px;
+  }
+
+  .child-health-intro,
+  .child-health-topics,
+  .child-health-feature,
+  .child-health-parent {
+    padding: 80px 0;
+  }
+
+  .child-health-section-heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .child-health-topics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .child-health-topic-card {
+    min-height: auto;
+  }
+
+  .child-health-topic-card-top {
+    margin-bottom: 35px;
+  }
+
+  .child-health-feature-image {
+    height: 430px;
+    border-radius: 25px 100px 25px 100px;
+  }
+
+  .child-health-feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  .child-health-parent-content {
+    padding: 45px 25px;
+  }
+
+  .child-health-parent-image {
+    height: 350px;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 450px) {
+  .child-health-hero-title {
+    font-size: 42px;
+  }
+
+  .child-health-hero-visual {
+    min-height: 370px;
+  }
+
+  .child-health-hero-image-main {
+    height: 325px;
+  }
+
+  .child-health-hero-image-small {
+    width: 125px;
+    height: 145px;
+  }
+
+  .child-health-hero-note {
+    max-width: 180px;
+  }
+
+  .child-health-hero-note-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .child-health-intro-content h2,
+  .child-health-section-heading h2,
+  .child-health-feature-content h2,
+  .child-health-parent-content h2 {
+    font-size: 38px;
+  }
+
+  .child-health-feature-image {
+    height: 350px;
+  }
+}

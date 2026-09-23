@@ -1,0 +1,522 @@
+/* =========================================================
+   HOME DOCTOR
+   ========================================================= */
+
+.home-doctor {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    var(--section-padding)
+    0;
+
+  background: var(--color-surface);
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.home-doctor-container {
+  width: 100%;
+  max-width: var(--container-width);
+
+  margin: 0 auto;
+
+  padding:
+    0
+    var(--container-padding);
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(400px, 0.9fr)
+    minmax(0, 1.1fr);
+
+  align-items: center;
+
+  gap: var(--space-20);
+}
+
+
+/* =========================================================
+   VISUAL
+   ========================================================= */
+
+.home-doctor-visual {
+  position: relative;
+
+  min-height: 560px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.home-doctor-image-wrapper {
+  position: relative;
+
+  width: 410px;
+  height: 500px;
+
+  overflow: hidden;
+
+  border-radius:
+    45px
+    180px
+    45px
+    180px;
+
+  background: var(--color-primary-light);
+
+  border: 8px solid var(--color-white);
+
+  box-shadow: var(--shadow-xl);
+
+  z-index: 2;
+}
+
+.home-doctor-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius:
+    45px
+    180px
+    45px
+    180px;
+}
+
+
+/* =========================================================
+   EXPERIENCE CARD
+   ========================================================= */
+
+.home-doctor-experience-card {
+  position: absolute;
+
+  right: 0;
+  bottom: 55px;
+
+  z-index: 4;
+
+  min-width: 220px;
+
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-3);
+
+  padding: var(--space-3);
+
+  background: var(--color-white);
+
+  border: 1px solid var(--color-border-light);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.home-doctor-experience-number {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: var(--color-primary);
+
+  background: var(--color-primary-light);
+
+  border-radius: 15px;
+
+  font-family: var(--font-serif);
+
+  font-size: var(--font-xl);
+
+  font-weight: var(--weight-bold);
+}
+
+.home-doctor-experience-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.home-doctor-experience-title {
+  color: var(--color-heading);
+
+  font-size: var(--font-sm);
+
+  font-weight: var(--weight-bold);
+}
+
+.home-doctor-experience-text {
+  color: var(--color-muted);
+
+  font-size: var(--font-xs);
+
+  line-height: var(--line-normal);
+}
+
+
+/* =========================================================
+   DECORATIONS
+   ========================================================= */
+
+.home-doctor-decoration {
+  position: absolute;
+
+  display: block;
+
+  border-radius: 50%;
+}
+
+.home-doctor-decoration-one {
+  width: 110px;
+  height: 110px;
+
+  top: 25px;
+  left: 5px;
+
+  background: var(--color-secondary-light);
+
+  z-index: 0;
+}
+
+.home-doctor-decoration-two {
+  width: 70px;
+  height: 70px;
+
+  right: 35px;
+  top: 20px;
+
+  background: var(--color-mint-light);
+
+  border: 10px solid var(--color-white);
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.home-doctor-content {
+  max-width: 650px;
+}
+
+.home-doctor-eyebrow {
+  display: inline-block;
+
+  margin-bottom: var(--space-4);
+
+  color: var(--color-primary);
+
+  font-size: var(--font-xs);
+
+  font-weight: var(--weight-bold);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.14em;
+}
+
+.home-doctor-title {
+  margin-bottom: var(--space-6);
+
+  color: var(--color-heading);
+
+  font-size: clamp(38px, 4vw, 54px);
+
+  font-weight: var(--weight-extrabold);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.04em;
+}
+
+.home-doctor-title-highlight {
+  display: block;
+
+  color: var(--color-primary);
+
+  font-family: var(--font-serif);
+
+  font-style: italic;
+
+  font-weight: var(--weight-bold);
+}
+
+.home-doctor-description {
+  max-width: 600px;
+
+  margin-bottom: var(--space-4);
+
+  color: var(--color-text);
+
+  font-size: var(--font-md);
+
+  line-height: var(--line-relaxed);
+}
+
+.home-doctor-description-secondary {
+  margin-bottom: var(--space-7);
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+   ========================================================= */
+
+.home-doctor-highlights {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-3);
+
+  margin-bottom: var(--space-8);
+}
+
+.home-doctor-highlight {
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-3);
+}
+
+.home-doctor-highlight-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: var(--color-primary);
+
+  background: var(--color-primary-light);
+
+  border-radius: 50%;
+
+  font-size: 12px;
+
+  font-weight: var(--weight-bold);
+}
+
+.home-doctor-highlight-text {
+  color: var(--color-heading);
+
+  font-size: var(--font-sm);
+
+  font-weight: var(--weight-semibold);
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.home-doctor-button {
+  min-height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: var(--space-3);
+
+  padding:
+    0
+    var(--space-2)
+    0
+    var(--space-5);
+
+  color: var(--color-primary);
+
+  background: var(--color-primary-soft);
+
+  border: 1px solid var(--color-primary-light);
+
+  border-radius: var(--radius-md);
+
+  text-decoration: none;
+
+  font-size: var(--font-sm);
+
+  font-weight: var(--weight-bold);
+
+  transition: var(--transition-normal);
+}
+
+.home-doctor-button:hover {
+  color: var(--color-white);
+
+  background: var(--color-primary);
+
+  border-color: var(--color-primary);
+
+  transform: translateY(-2px);
+}
+
+.home-doctor-button-arrow {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-white);
+
+  background: var(--color-primary);
+
+  border-radius: 10px;
+
+  transition: var(--transition-normal);
+}
+
+.home-doctor-button:hover
+.home-doctor-button-arrow {
+  color: var(--color-primary);
+
+  background: var(--color-white);
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .home-doctor-container {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-12);
+  }
+
+  .home-doctor-visual {
+    min-height: 540px;
+  }
+
+  .home-doctor-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+  }
+
+  .home-doctor-title {
+    font-size: 44px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .home-doctor-container {
+    gap: var(--space-8);
+  }
+
+  .home-doctor-visual {
+    min-height: 450px;
+  }
+
+  .home-doctor-image-wrapper {
+    width: 285px;
+    height: 390px;
+
+    border-radius:
+      35px
+      140px
+      35px
+      140px;
+  }
+
+  .home-doctor-experience-card {
+    right: 0;
+
+    bottom: 30px;
+
+    min-width: 190px;
+  }
+
+  .home-doctor-experience-number {
+    width: 42px;
+    height: 42px;
+  }
+
+  .home-doctor-decoration-one {
+    width: 80px;
+    height: 80px;
+  }
+
+  .home-doctor-decoration-two {
+    width: 55px;
+    height: 55px;
+  }
+
+  .home-doctor-title {
+    font-size: 36px;
+  }
+
+  .home-doctor-description {
+    font-size: var(--font-md);
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .home-doctor-visual {
+    min-height: 410px;
+  }
+
+  .home-doctor-image-wrapper {
+    width: 250px;
+    height: 350px;
+  }
+
+  .home-doctor-experience-card {
+    right: -5px;
+
+    min-width: 175px;
+  }
+
+  .home-doctor-experience-text {
+    font-size: 10px;
+  }
+
+  .home-doctor-title {
+    font-size: 32px;
+  }
+}

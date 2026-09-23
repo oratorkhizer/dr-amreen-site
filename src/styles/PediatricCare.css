@@ -1,0 +1,887 @@
+.pediatric-care-page {
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+.pediatric-care-page img {
+  width: 100%;
+  display: block;
+}
+
+.pediatric-care-hero {
+  position: relative;
+  padding: 80px 0 100px;
+  background: var(--color-background);
+}
+
+.pediatric-care-hero-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 35px auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.pediatric-care-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.pediatric-care-hero-eyebrow,
+.pediatric-care-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pediatric-care-hero-eyebrow::before,
+.pediatric-care-section-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--color-secondary);
+}
+
+.pediatric-care-hero-title {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: clamp(52px, 6vw, 82px);
+  font-weight: var(--weight-extrabold);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.pediatric-care-hero-title span {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.pediatric-care-hero-description {
+  max-width: 540px;
+  margin: 28px 0 34px;
+  color: var(--color-text);
+  font-size: var(--font-md);
+  line-height: var(--line-relaxed);
+}
+
+.pediatric-care-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.pediatric-care-primary-button,
+.pediatric-care-secondary-button,
+.pediatric-care-cta-button {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
+  font-size: var(--font-sm);
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+  transition: var(--transition-normal);
+}
+
+.pediatric-care-primary-button,
+.pediatric-care-cta-button {
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+
+.pediatric-care-primary-button:hover,
+.pediatric-care-cta-button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.pediatric-care-primary-button span,
+.pediatric-care-cta-button span {
+  font-size: 20px;
+}
+
+.pediatric-care-secondary-button {
+  color: var(--color-heading);
+  background: transparent;
+  border: 1px solid var(--color-border);
+}
+
+.pediatric-care-secondary-button:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.pediatric-care-hero-visual {
+  position: relative;
+  min-height: 610px;
+}
+
+.pediatric-care-hero-image-main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 78%;
+  height: 540px;
+  overflow: hidden;
+  border-radius: 180px 180px 24px 24px;
+  background: var(--color-primary-soft);
+}
+
+.pediatric-care-hero-image-main img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pediatric-care-hero-image-small {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 28px;
+  width: 42%;
+  height: 245px;
+  overflow: hidden;
+  border: 9px solid var(--color-background);
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.pediatric-care-hero-image-small img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.pediatric-care-hero-note {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px 20px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+}
+
+.pediatric-care-hero-note-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-radius: 50%;
+  font-size: 23px;
+}
+
+.pediatric-care-hero-note div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pediatric-care-hero-note strong {
+  color: var(--color-heading);
+  font-size: var(--font-xs);
+}
+
+.pediatric-care-hero-note span:last-child {
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.pediatric-care-hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.pediatric-care-hero-shape-one {
+  width: 90px;
+  height: 90px;
+  top: 15px;
+  left: 30px;
+  border: 18px solid var(--color-secondary-light);
+}
+
+.pediatric-care-hero-shape-two {
+  width: 18px;
+  height: 18px;
+  right: 12%;
+  top: 5%;
+  background: var(--color-secondary);
+}
+
+.pediatric-care-introduction {
+  padding: 120px 0;
+  background: var(--color-white);
+}
+
+.pediatric-care-introduction-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: 0.55fr 1fr 0.8fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.pediatric-care-introduction-label {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-primary);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.pediatric-care-introduction-label span {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+.pediatric-care-introduction-content h2,
+.pediatric-care-areas-heading h2,
+.pediatric-care-stages-content h2,
+.pediatric-care-prevention-heading h2,
+.pediatric-care-cta-content h2 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: clamp(38px, 4vw, 56px);
+  font-weight: var(--weight-extrabold);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.pediatric-care-introduction-content h2 span,
+.pediatric-care-areas-heading h2 span,
+.pediatric-care-stages-content h2 span,
+.pediatric-care-prevention-heading h2 span,
+.pediatric-care-cta-content h2 span {
+  display: block;
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.pediatric-care-introduction-content p {
+  margin: 22px 0 0;
+  color: var(--color-text);
+  font-size: var(--font-sm);
+  line-height: var(--line-relaxed);
+}
+
+.pediatric-care-introduction-image {
+  height: 430px;
+  overflow: hidden;
+  border-radius: 24px 120px 24px 24px;
+}
+
+.pediatric-care-introduction-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.pediatric-care-areas {
+  padding: 120px 0;
+  background: var(--color-background);
+}
+
+.pediatric-care-areas-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.pediatric-care-areas-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.55fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 55px;
+}
+
+.pediatric-care-areas-heading p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-md);
+  line-height: var(--line-relaxed);
+}
+
+.pediatric-care-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.pediatric-care-area-card {
+  position: relative;
+  min-height: 280px;
+  padding: 30px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  transition: var(--transition-normal);
+}
+
+/* .pediatric-care-area-card:nth-child(2),
+.pediatric-care-area-card:nth-child(5) {
+  transform: translateY(28px);
+} */
+
+.pediatric-care-area-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* .pediatric-care-area-card:nth-child(2):hover,
+.pediatric-care-area-card:nth-child(5):hover {
+  transform: translateY(20px);
+} */
+
+.pediatric-care-area-number {
+  color: var(--color-muted);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-bold);
+}
+
+.pediatric-care-area-icon {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.pediatric-care-area-card h3 {
+  margin: 60px 0 12px;
+  color: var(--color-heading);
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+}
+
+.pediatric-care-area-card p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-sm);
+  line-height: 1.7;
+}
+
+.pediatric-care-stages {
+  padding: 140px 0;
+  background: var(--color-primary-dark);
+}
+
+.pediatric-care-stages-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.pediatric-care-stages-visual {
+  position: relative;
+  height: 640px;
+}
+
+.pediatric-care-stages-visual img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+.pediatric-care-stages-badge {
+  position: absolute;
+  right: -30px;
+  bottom: 40px;
+  width: 190px;
+  padding: 24px;
+  background: var(--color-white);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+}
+
+.pediatric-care-stages-badge span,
+.pediatric-care-stages-badge small {
+  display: block;
+  color: var(--color-muted);
+  font-size: 11px;
+}
+
+.pediatric-care-stages-badge strong {
+  display: block;
+  margin: 4px 0;
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-style: italic;
+}
+
+.pediatric-care-stages-content {
+  color: var(--color-white);
+}
+
+.pediatric-care-stages-content .pediatric-care-section-eyebrow {
+  color: var(--color-secondary-light);
+}
+
+.pediatric-care-stages-content h2 {
+  color: var(--color-white);
+}
+
+.pediatric-care-stages-content h2 span {
+  color: var(--color-secondary-light);
+}
+
+.pediatric-care-stages-intro {
+  max-width: 600px;
+  margin: 25px 0 35px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--font-sm);
+  line-height: var(--line-relaxed);
+}
+
+.pediatric-care-stages-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.pediatric-care-stage {
+  display: grid;
+  grid-template-columns: 55px 1fr 30px;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.pediatric-care-stage-number {
+  color: var(--color-secondary-light);
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+}
+
+.pediatric-care-stage-content h3 {
+  margin: 0 0 5px;
+  color: var(--color-white);
+  font-size: 17px;
+}
+
+.pediatric-care-stage-content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.pediatric-care-stage-arrow {
+  color: var(--color-secondary-light);
+  font-size: 20px;
+}
+
+.pediatric-care-prevention {
+  padding: 120px 0;
+  background: var(--color-white);
+}
+
+.pediatric-care-prevention-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.pediatric-care-prevention-heading {
+  max-width: 700px;
+  margin-bottom: 60px;
+}
+
+.pediatric-care-prevention-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.pediatric-care-prevention-image {
+  height: 500px;
+  overflow: hidden;
+  border-radius: 120px 24px 24px 24px;
+}
+
+.pediatric-care-prevention-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.pediatric-care-prevention-list {
+  border-top: 1px solid var(--color-border);
+}
+
+.pediatric-care-prevention-item {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pediatric-care-prevention-item > span {
+  color: var(--color-primary);
+  font-size: var(--font-xs);
+  font-weight: var(--weight-bold);
+}
+
+.pediatric-care-prevention-item h3 {
+  margin: 0 0 7px;
+  color: var(--color-heading);
+  font-size: 19px;
+}
+
+.pediatric-care-prevention-item p {
+  max-width: 580px;
+  margin: 0;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.pediatric-care-cta {
+  padding: 100px 0;
+  background: var(--color-background);
+}
+
+.pediatric-care-cta-container {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-width);
+  min-height: 520px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.pediatric-care-cta-image {
+  height: 480px;
+  overflow: hidden;
+  border-radius: 24px 24px 130px 24px;
+}
+
+.pediatric-care-cta-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.pediatric-care-cta-content {
+  max-width: 600px;
+}
+
+.pediatric-care-cta-content p {
+  max-width: 540px;
+  margin: 25px 0 30px;
+  color: var(--color-text);
+  font-size: var(--font-md);
+  line-height: var(--line-relaxed);
+}
+
+@media (max-width: 1050px) {
+  .pediatric-care-hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pediatric-care-hero-content {
+    max-width: 750px;
+  }
+
+  .pediatric-care-hero-visual {
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .pediatric-care-introduction-container {
+    grid-template-columns: 0.35fr 1fr;
+  }
+
+  .pediatric-care-introduction-image {
+    grid-column: 2;
+  }
+
+  .pediatric-care-stages-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pediatric-care-stages-visual {
+    max-width: 650px;
+    width: 100%;
+  }
+
+  .pediatric-care-prevention-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .pediatric-care-hero {
+    padding: 60px 0 80px;
+  }
+
+  .pediatric-care-hero-title {
+    font-size: clamp(48px, 11vw, 70px);
+  }
+
+  .pediatric-care-hero-visual {
+    min-height: 520px;
+  }
+
+  .pediatric-care-hero-image-main {
+    width: 82%;
+    height: 450px;
+  }
+
+  .pediatric-care-hero-image-small {
+    width: 45%;
+    height: 210px;
+  }
+
+  .pediatric-care-introduction {
+    padding: 90px 0;
+  }
+
+  .pediatric-care-introduction-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pediatric-care-introduction-image {
+    grid-column: auto;
+    height: 420px;
+  }
+
+  .pediatric-care-areas {
+    padding: 90px 0;
+  }
+
+  .pediatric-care-areas-heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .pediatric-care-areas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pediatric-care-area-card:nth-child(2),
+  .pediatric-care-area-card:nth-child(5) {
+    transform: none;
+  }
+
+  .pediatric-care-area-card:nth-child(2):hover,
+  .pediatric-care-area-card:nth-child(5):hover {
+    transform: translateY(-5px);
+  }
+
+  .pediatric-care-stages {
+    padding: 90px 0;
+  }
+
+  .pediatric-care-prevention {
+    padding: 90px 0;
+  }
+
+  .pediatric-care-prevention-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pediatric-care-prevention-image {
+    height: 400px;
+  }
+
+  .pediatric-care-cta-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pediatric-care-cta-image {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pediatric-care-hero {
+    padding: 45px 0 70px;
+  }
+
+  .pediatric-care-hero-description {
+    font-size: 14px;
+  }
+
+  .pediatric-care-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pediatric-care-primary-button,
+  .pediatric-care-secondary-button {
+    width: 100%;
+  }
+
+  .pediatric-care-hero-visual {
+    min-height: 420px;
+  }
+
+  .pediatric-care-hero-image-main {
+    width: 88%;
+    height: 370px;
+    border-radius: 120px 120px 20px 20px;
+  }
+
+  .pediatric-care-hero-image-small {
+    left: 0;
+    bottom: 0;
+    width: 48%;
+    height: 165px;
+    border-width: 6px;
+  }
+
+  .pediatric-care-hero-note {
+    right: 0;
+    padding: 12px 15px;
+  }
+
+  .pediatric-care-hero-note-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .pediatric-care-introduction {
+    padding: 75px 0;
+  }
+
+  .pediatric-care-introduction-content h2,
+  .pediatric-care-areas-heading h2,
+  .pediatric-care-stages-content h2,
+  .pediatric-care-prevention-heading h2,
+  .pediatric-care-cta-content h2 {
+    font-size: 38px;
+  }
+
+  .pediatric-care-introduction-image {
+    height: 330px;
+    border-radius: 20px 90px 20px 20px;
+  }
+
+  .pediatric-care-areas {
+    padding: 75px 0;
+  }
+
+  .pediatric-care-areas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pediatric-care-area-card {
+    min-height: 240px;
+  }
+
+  .pediatric-care-stages {
+    padding: 75px 0;
+  }
+
+  .pediatric-care-stages-visual {
+    height: 430px;
+  }
+
+  .pediatric-care-stages-badge {
+    right: 15px;
+    bottom: 20px;
+    width: 160px;
+    padding: 18px;
+  }
+
+  .pediatric-care-stage {
+    grid-template-columns: 35px 1fr 20px;
+    gap: 10px;
+  }
+
+  .pediatric-care-stage-content h3 {
+    font-size: 16px;
+  }
+
+  .pediatric-care-stage-content p {
+    font-size: 12px;
+  }
+
+  .pediatric-care-prevention {
+    padding: 75px 0;
+  }
+
+  .pediatric-care-prevention-image {
+    height: 330px;
+    border-radius: 90px 20px 20px 20px;
+  }
+
+  .pediatric-care-cta {
+    padding: 70px 0;
+  }
+
+  .pediatric-care-cta-image {
+    height: 330px;
+    border-radius: 20px 20px 90px 20px;
+  }
+
+  .pediatric-care-cta-content p {
+    font-size: 14px;
+  }
+
+  .pediatric-care-cta-button {
+    width: 100%;
+  }
+}
