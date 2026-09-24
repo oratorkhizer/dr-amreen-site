@@ -73,12 +73,24 @@ const Article = ({ slug }) => {
                 ))}
               </ul>
 
-              <a
-                className="article-flags-call"
-                href={`tel:${CLINIC.phoneE164}`}
-              >
-                Call the clinic on {CLINIC.phone}
-              </a>
+              {article.redFlags.emergency ? (
+                <p className="article-flags-note">
+                  During OPD hours ({OPD.days}, {OPD.hours}) you can come to{" "}
+                  {CLINIC.name} or call{" "}
+                  <a href={`tel:${CLINIC.phoneE164}`}>{CLINIC.phone}</a>. At any
+                  other time, or if your child looks very unwell, go straight to
+                  the nearest hospital with a children's emergency department.{" "}
+                  {CLINIC.name} does not run a paediatric emergency or an
+                  inpatient ward for children.
+                </p>
+              ) : (
+                <a
+                  className="article-flags-call"
+                  href={`tel:${CLINIC.phoneE164}`}
+                >
+                  Call the clinic on {CLINIC.phone}
+                </a>
+              )}
             </aside>
           </div>
 
@@ -90,8 +102,8 @@ const Article = ({ slug }) => {
                 <div>
                   <dt>Clinic</dt>
                   <dd>
-                    {CLINIC.name}, {CLINIC.addressLine2}, {CLINIC.landmark},{" "}
-                    {CLINIC.city} {CLINIC.postalCode}
+                    {CLINIC.name}, {CLINIC.addressLine1},{" "}
+                    {CLINIC.addressLine2}, {CLINIC.city} {CLINIC.postalCode}
                   </dd>
                 </div>
 
