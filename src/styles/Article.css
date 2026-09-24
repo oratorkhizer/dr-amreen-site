@@ -316,3 +316,20 @@
     padding: 24px 20px;
   }
 }
+
+.article-flags-note {
+  margin: 0;
+  font-size: var(--font-md);
+  line-height: 1.7;
+  color: #6e3f30;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+}
+
+.article-flags-note a {
+  color: #8f3c22;
+  font-weight: var(--weight-bold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
