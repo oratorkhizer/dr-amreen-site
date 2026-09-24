@@ -9,7 +9,7 @@ export const ROUTES = [
     title:
       "Dr. Amreen, Pediatrician in Hyderabad | Caspian Healthcare",
     description:
-      "Dr. Amreen, MBBS MD Pediatrics, is a pediatrician at Caspian Healthcare, Vijaya Nagar Colony, Hyderabad. Newborn care, growth and development, immunisation and childhood illness. OPD Monday to Saturday, 3 pm to 9 pm.",
+      "Dr. Amreen, MBBS MD Pediatrics, is a pediatrician at Caspian Healthcare, Vijaynagar Colony, Hyderabad. Newborn care, growth and development, immunisation and childhood illness. OPD Monday to Saturday, 3 pm to 9 pm.",
   },
   {
     path: "/about",
@@ -33,7 +33,7 @@ export const ROUTES = [
     path: "/contact",
     title: "Contact and Clinic Address | Dr. Amreen, Hyderabad",
     description:
-      "Caspian Healthcare, 10-3-761/8, First Floor, Unit-2, Ahmed Plaza, Vijaya Nagar Colony, Opp. Post Office, Hyderabad 500057. Phone 8919341154. OPD Monday to Saturday, 3 pm to 9 pm.",
+      "Caspian Healthcare, 10-3-761/8, Opp. Post Office, Vijaynagar Colony, Hyderabad 500057. Phone 8919341154. OPD Monday to Saturday, 3 pm to 9 pm.",
   },
   {
     path: "/appointment",
@@ -77,7 +77,7 @@ export const NOT_FOUND = {
   path: null,
   title: "Page not found | Dr. Amreen, Pediatrician, Hyderabad",
   description:
-    "This page does not exist. Find Dr. Amreen's clinic address, OPD timings and booking link at Caspian Healthcare, Vijaya Nagar Colony, Hyderabad.",
+    "This page does not exist. Find Dr. Amreen's clinic address, OPD timings and booking link at Caspian Healthcare, Vijaynagar Colony, Hyderabad.",
 };
 
 export const routeMeta = (pathname) =>

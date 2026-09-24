@@ -1,5 +1,10 @@
 // Parent's Corner articles. Plain English, short sentences, written for
-// parents. Reviewed by Dr. Amreen before publishing.
+// parents. Reviewed and approved by Dr. Amreen before publishing.
+//
+// redFlags.emergency marks a list that contains true emergencies. Caspian
+// Healthcare has no paediatric emergency and no children's inpatient ward, so
+// those boxes must send parents to a hospital emergency department, never to
+// the clinic alone. Do not remove that distinction.
 
 export const ARTICLES = {
   "newborn-care": {
@@ -47,6 +52,7 @@ export const ARTICLES = {
       },
     ],
     redFlags: {
+      emergency: true,
       title: "See a doctor the same day if your baby",
       items: [
         "Is feeding poorly, or refuses feeds",
@@ -105,6 +111,7 @@ export const ARTICLES = {
       },
     ],
     redFlags: {
+      emergency: false,
       title: "Bring your child in if",
       items: [
         "Weight has not increased for three months or more",
@@ -163,7 +170,8 @@ export const ARTICLES = {
       },
     ],
     redFlags: {
-      title: "Call the clinic after a vaccine if your child has",
+      emergency: true,
+      title: "After a vaccine, get medical advice the same day if your child has",
       items: [
         "Fever above 102°F, or fever lasting more than two days",
         "A fit or seizure",
@@ -218,6 +226,7 @@ export const ARTICLES = {
       },
     ],
     redFlags: {
+      emergency: false,
       title: "Ask for an assessment if your child",
       items: [
         "Is not holding the head steady by 4 months",
@@ -275,7 +284,8 @@ export const ARTICLES = {
       },
     ],
     redFlags: {
-      title: "Come in straight away if your child",
+      emergency: true,
+      title: "These need medical attention straight away. Do not wait if your child",
       items: [
         "Is under 3 months and has any fever",
         "Is breathing fast, or the chest is pulling in with each breath",
