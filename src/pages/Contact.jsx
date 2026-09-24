@@ -105,7 +105,7 @@ const Contact = () => {
               Have a question about your child's health, or need help with a
               consultation? Call the clinic, come during OPD hours, or send an
               enquiry below. {DOCTOR.shortName} consults at {CLINIC.name},
-              Vijaya Nagar Colony, Hyderabad.
+              Vijaynagar Colony, Hyderabad.
             </p>
           </div>
 
@@ -192,7 +192,7 @@ const Contact = () => {
                     <strong>{CLINIC.name}</strong>
                     <span>
                       {CLINIC.addressLine1}, {CLINIC.addressLine2},{" "}
-                      {CLINIC.landmark}, {CLINIC.city} {CLINIC.postalCode}
+                      {CLINIC.city} {CLINIC.postalCode}
                     </span>
                   </span>
 

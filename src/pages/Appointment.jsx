@@ -41,7 +41,7 @@ const Appointment = () => {
           </h1>
 
           <p className="appointment-intro">
-            {DOCTOR.name} consults at {CLINIC.name}, Vijaya Nagar Colony,
+            {DOCTOR.name} consults at {CLINIC.name}, Vijaynagar Colony,
             Hyderabad. Appointments are booked online so that your turn is held
             and you are not waiting with an unwell child.
           </p>
@@ -87,8 +87,8 @@ const Appointment = () => {
             <span className="appointment-fact-label">Clinic</span>
             <strong className="appointment-fact-value">{CLINIC.name}</strong>
             <span className="appointment-fact-note">
-              {CLINIC.addressLine2}, {CLINIC.landmark}, {CLINIC.city}{" "}
-              {CLINIC.postalCode}
+              {CLINIC.addressLine1}, {CLINIC.addressLine2},{" "}
+              {CLINIC.city} {CLINIC.postalCode}
             </span>
           </div>
 
@@ -138,10 +138,16 @@ const Appointment = () => {
             <h2 className="appointment-urgent-title">If your child is unwell today</h2>
 
             <p>
-              Do not wait for a slot. Come to {CLINIC.name} during OPD hours, or
-              call reception on{" "}
-              <a href={`tel:${CLINIC.phoneE164}`}>{CLINIC.phone}</a>. Children
-              who need admission can be admitted at the hospital.
+              During OPD hours, do not wait for a slot. Come to {CLINIC.name},
+              or call reception on{" "}
+              <a href={`tel:${CLINIC.phoneE164}`}>{CLINIC.phone}</a>.
+            </p>
+
+            <p>
+              Outside OPD hours, or if your child needs emergency care or
+              admission, please go straight to the nearest hospital with a
+              children's emergency department. {CLINIC.name} does not run a
+              paediatric emergency or an inpatient ward for children.
             </p>
 
             <NavLink className="appointment-urgent-link" to="/contact">
