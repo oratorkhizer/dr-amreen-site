@@ -1,7 +1,6 @@
 # Dr. Amreen, Pediatrician
 
-Website for Dr. Amreen, Pediatrician at Caspian Healthcare, Vijaya Nagar
-Colony, Hyderabad.
+Website for Dr. Amreen, Pediatrician at Caspian Healthcare, Vijaynagar Colony, Hyderabad.
 
 ## Stack
 
