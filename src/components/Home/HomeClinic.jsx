@@ -47,7 +47,7 @@ const HomeClinic = () => {
               </strong>
 
               <span className="home-clinic-map-label-small">
-                {CLINIC.landmark}, {CLINIC.city} {CLINIC.postalCode}
+                {CLINIC.city} {CLINIC.postalCode}, {CLINIC.state}
               </span>
             </div>
 
@@ -71,7 +71,7 @@ const HomeClinic = () => {
 
                 <p className="home-clinic-detail-text">
                   {CLINIC.addressLine1}, {CLINIC.addressLine2},{" "}
-                  {CLINIC.landmark}, {CLINIC.city} {CLINIC.postalCode}
+                  {CLINIC.city} {CLINIC.postalCode}, {CLINIC.state}
                 </p>
               </div>
             </div>

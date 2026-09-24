@@ -56,7 +56,7 @@ const HomeHero = () => {
               </strong>
 
               <span className="home-hero-trust-text">
-                {CLINIC.name}, Vijaya Nagar Colony, {CLINIC.city}. Consultation Rs{" "}
+                {CLINIC.name}, Vijaynagar Colony, {CLINIC.city}. Consultation Rs{" "}
                 {DOCTOR.consultationFee}.
               </span>
             </div>
