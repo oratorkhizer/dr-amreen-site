@@ -63,7 +63,7 @@ export const ROUTES = [
     path: "/growth-development",
     title: "Growth and Development Milestones | Dr. Amreen",
     description:
-      "Height, weight and head circumference, and the movement, speech and social milestones to expect from birth to five years. When a delay needs assessment.",
+      "Check where your child falls on the WHO and IAP growth charts, and the movement, speech and social milestones to expect from birth to five years. When a delay needs assessment.",
   },
   {
     path: "/childhood-illnesses",

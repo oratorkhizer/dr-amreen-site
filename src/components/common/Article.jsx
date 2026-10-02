@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { ARTICLES } from "../../data/articles";
 import { DOCTOR, CLINIC, OPD, BOOKING_URL } from "../../data/site";
 import "../../styles/Article.css";
+import GrowthCalculator from "./GrowthCalculator";
 
 const Article = ({ slug }) => {
   const article = ARTICLES[slug];
@@ -61,6 +62,8 @@ const Article = ({ slug }) => {
                 )}
               </section>
             ))}
+
+            {slug === "growth-development" && <GrowthCalculator />}
 
             <aside className="article-flags" role="note">
               <h2 className="article-flags-heading">
