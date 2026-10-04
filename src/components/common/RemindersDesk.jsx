@@ -28,8 +28,11 @@ function startOfToday() {
 function nextVisit(row, today) {
   const dob = new Date(`${row.child_dob}T00:00:00`);
   const sent = row.sent || {};
+  // Birth vaccines are given in hospital before discharge, so the desk
+  // never chases them; reminders start with the 6 week visit.
   return planFor(dob).find(
     (item) =>
+      item.key !== "birth" &&
       item.date >= new Date(today.getTime() - STILL_DUE_DAYS_AFTER * DAY) &&
       !sent[item.key.slice(0, 20)]
   );
