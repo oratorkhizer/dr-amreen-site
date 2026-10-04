@@ -17,6 +17,11 @@ Website for Dr. Amreen, Pediatrician at Caspian Healthcare, Vijaynagar Colony, H
 | Name, degrees, registration, clinic address, phone, OPD hours, fee, booking link | `src/data/site.js` |
 | Page titles and meta descriptions | `src/data/routes.js` |
 | Parent's Corner article content | `src/data/articles.js` |
+| Vaccine schedule (IAP 2023): the guide outline, the date planner and the reminder list all read this one file | `src/data/vaccines.js` |
+| Instagram follower count, bio line, Reels shown on the site | `src/data/site.js` (`INSTAGRAM`, `REELS`) |
+| Google reviews links (her own profile, by place ID) | `src/data/site.js` (`GOOGLE_PLACE_ID`) |
+| Turn WhatsApp vaccine reminders on or off | `src/data/site.js` (`VACCINE_REMINDERS_ENABLED`) |
+| Milestone lists | `src/components/common/MilestoneChecker.jsx` |
 | Design tokens (colours, type scale, spacing) | `src/index.css` |
 
 `src/data/site.js` is the single source of truth. Changing the phone number

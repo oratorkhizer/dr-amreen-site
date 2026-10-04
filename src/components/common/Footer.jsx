@@ -95,6 +95,8 @@ const Footer = () => {
               <NavLink to="/about">About Dr. Amreen</NavLink>
               <NavLink to="/pediatric-care">Pediatric Care</NavLink>
               <NavLink to="/child-health">Child Health</NavLink>
+              <NavLink to="/vaccination-guide#vaccine-dates">Vaccine dates</NavLink>
+              <NavLink to="/new-mothers">For new mothers</NavLink>
               <NavLink to="/contact">Contact</NavLink>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 Book an Appointment

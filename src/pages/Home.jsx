@@ -9,6 +9,8 @@ import HomeWhyChoose from "../components/Home/HomeWhyChoose";
 import HomeTestimonials from "../components/Home/HomeTestimonials";
 import HomeAppointment from "../components/Home/HomeAppointment";
 import HomeClinic from "../components/Home/HomeClinic";
+import HomeTools from "../components/Home/HomeTools";
+import HomeReels from "../components/Home/HomeReels";
 
 const Home = () => {
   return (
@@ -17,7 +19,11 @@ const Home = () => {
 
       <HomeDoctor />
 
+      <HomeTools />
+
       <HomePediatricCare />
+
+      <HomeReels />
 
       <HomeHealthTopics />
 

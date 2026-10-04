@@ -149,3 +149,5 @@
     padding: 10px 16px;
   }
 }
+
+.home-book-more { display: block; margin-top: 18px; color: var(--color-primary-dark); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }

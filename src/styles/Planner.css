@@ -1,0 +1,61 @@
+/* Vaccine dates planner on /vaccination-guide. Uses the site tokens only. */
+.planner { margin: 40px 0 8px; scroll-margin-top: 110px; }
+.planner-heading { margin: 0 0 8px; color: var(--color-heading); font-size: clamp(24px, 3vw, 30px); line-height: 1.2; }
+.planner-intro { margin: 0 0 18px; color: var(--color-text); font-size: 16px; line-height: 1.65; }
+
+.planner-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; background: var(--color-surface); border: 1px solid #cfe6e3; border-radius: 16px; padding: 20px; }
+.planner-form label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; color: var(--color-heading); font-size: 15px; }
+.planner-form label small { font-weight: 400; color: var(--color-text); }
+.planner-form input { min-height: 46px; padding: 10px 12px; border: 1px solid #b9d6d2; border-radius: 10px; font: inherit; color: var(--color-text); background: #fff; width: 100%; box-sizing: border-box; }
+.planner-form input:focus { outline: 3px solid rgba(47, 133, 129, 0.25); border-color: var(--color-primary); }
+
+.planner-error { margin: 14px 0 0; padding: 12px 16px; border-radius: 10px; background: var(--color-secondary-soft); color: var(--color-secondary-text); font-weight: 600; }
+.planner-result { margin-top: 20px; }
+
+.planner-next { position: relative; border-radius: 22px; padding: 22px 22px 20px; background: var(--color-primary-soft); border: 1px solid #bfe3df; }
+.planner-next-label { display: block; font-family: var(--font-serif); font-style: italic; color: var(--color-primary-dark); font-size: 17px; }
+.planner-next-date { display: block; margin-top: 2px; color: var(--color-primary-deep); font-size: clamp(28px, 4.4vw, 38px); line-height: 1.1; }
+.planner-next-age { display: inline-block; margin-top: 6px; color: var(--color-heading); font-weight: 700; }
+.planner-next-vaccines { margin: 8px 0 0; color: var(--color-text); line-height: 1.6; }
+
+.planner-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.planner-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0; background: var(--color-primary); color: #fff; font: inherit; font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer; }
+.planner-button:hover { background: var(--color-primary-dark); }
+.planner-button:disabled { opacity: 0.6; cursor: default; }
+.planner-button-quiet { background: #fff; color: var(--color-primary-deep); border: 1.5px solid var(--color-primary); }
+.planner-button-quiet:hover { background: var(--color-primary-light); }
+
+.planner-past { margin: 16px 0 0; padding: 12px 16px; border-radius: 12px; background: var(--color-yellow-light); color: var(--color-heading); font-size: 15px; line-height: 1.6; }
+
+.planner-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 0; border-left: 2px dashed #bfe3df; }
+.planner-item { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 14px; padding: 12px 0 12px 22px; }
+.planner-item::before { content: ""; position: absolute; left: -7px; top: 18px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 2px solid var(--color-primary); }
+.planner-item.is-next::before { background: var(--color-secondary); border-color: var(--color-secondary-dark); width: 14px; height: 14px; left: -8px; }
+.planner-item.is-past { opacity: 0.55; }
+.planner-item-when strong { display: block; color: var(--color-heading); font-size: 16px; }
+.planner-item-when span { color: var(--color-text); font-size: 14px; }
+.planner-item-what ul { margin: 0; padding-left: 18px; color: var(--color-text); font-size: 15px; line-height: 1.6; }
+.planner-item-what p { margin: 4px 0 0; font-size: 14px; color: var(--color-text-light); font-style: italic; }
+
+.planner-toggle { margin-top: 8px; background: none; border: 0; padding: 8px 0; color: var(--color-primary-dark); font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
+
+.planner-remind { margin-top: 24px; padding: 20px; border-radius: 18px; background: var(--color-secondary-soft); border: 1px solid var(--color-secondary-light); }
+.planner-remind h3 { margin: 0 0 6px; color: var(--color-heading); font-size: 20px; }
+.planner-remind > p { margin: 0 0 14px; color: var(--color-text); line-height: 1.6; }
+.planner-remind .planner-form { margin-bottom: 14px; }
+.planner-consent { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 14px; font-size: 14px; color: var(--color-text); line-height: 1.55; }
+.planner-consent input { width: 20px; height: 20px; margin-top: 2px; flex: none; accent-color: var(--color-primary); }
+.planner-done { margin: 0; padding: 14px 16px; border-radius: 12px; background: var(--color-success-light); color: var(--color-heading); font-weight: 600; }
+.planner-trap { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.planner-note { margin: 16px 0 0; font-size: 14px; color: var(--color-text); line-height: 1.6; }
+
+@media (max-width: 560px) {
+  .planner-form { grid-template-columns: 1fr; padding: 16px; }
+  .planner-item { grid-template-columns: 1fr; gap: 4px; }
+  .planner-actions .planner-button { width: 100%; }
+}
+@media print {
+  .planner-form, .planner-actions, .planner-remind, .planner-toggle { display: none; }
+  .planner-item.is-past { opacity: 1; }
+}

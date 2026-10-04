@@ -23,9 +23,10 @@ import GrowthDevelopment from "./home-pages/GrowthDevelopment";
 import ChildhoodIllnesses from "./home-pages/ChildhoodIllnesses";
 import ChildHealth from "./pages/ChildHealth";
 import Enquiries from "./pages/Enquiries";
+import NewMothers from "./pages/NewMothers";
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) {
@@ -36,6 +37,25 @@ function ScrollToTop() {
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
+
+  // /page#section links from the home page tools: wait for the page to
+  // render, then bring the section into view.
+  useEffect(() => {
+    if (!hash) return undefined;
+    const id = decodeURIComponent(hash.slice(1));
+    let tries = 0;
+    const timer = setInterval(() => {
+      const el = document.getElementById(id);
+      tries += 1;
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        clearInterval(timer);
+      } else if (tries > 20) {
+        clearInterval(timer);
+      }
+    }, 100);
+    return () => clearInterval(timer);
+  }, [pathname, hash]);
 
   return null;
 }
@@ -106,6 +126,10 @@ const router = createBrowserRouter([
       {
         path: "childhood-illnesses",
         element: <ChildhoodIllnesses />,
+      },
+      {
+        path: "new-mothers",
+        element: <NewMothers />,
       },
       {
         path: "enquiries",

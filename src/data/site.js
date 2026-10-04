@@ -77,8 +77,11 @@ export const OPD = {
 export const BOOKING_URL =
   "https://www.eka.care/doctor/dr-amreen-pediatrician?cid=68032f8d25be81001d3d562e&utm_source=dramreen-site&utm_medium=website&utm_campaign=book-appointment";
 
-export const GOOGLE_REVIEWS_URL =
-  "https://www.eka.care/doctor/dr-amreen-pediatrician";
+// Her own Google Business Profile ("Dr. Amreen MD"), found by place ID on
+// 4 Oct 2026. Not the Eka Care page, and not the Caspian Healthcare listing.
+export const GOOGLE_PLACE_ID = "ChIJK6GsYSOXyzsRfX7Sjd_t10E";
+export const GOOGLE_REVIEWS_URL = `https://www.google.com/maps/place/?q=place_id:${GOOGLE_PLACE_ID}`;
+export const GOOGLE_WRITE_REVIEW_URL = `https://search.google.com/local/writereview?placeid=${GOOGLE_PLACE_ID}`;
 
 // Her book. Details taken from the Amazon listing, printed as published.
 export const BOOK = {
@@ -98,8 +101,8 @@ export const BOOK = {
     "As mothers, what we most need in the thick of it is guidance that feels like beloved companionship: steady, reassuring, and grounded in real understanding. This book tries to do just that.",
 };
 
-// Verified live in September 2026. @babydoc.amreen is her current Instagram and
-// matches this site's domain; the older @yourdramreen account is not listed.
+// @babydoc.amreen is her main Instagram: 92k followers, confirmed by Dr. Khizer
+// on 4 Oct 2026. The older @yourdramreen account is not listed.
 // yourdramreen.com and the YouTube channel on her Linktree are both dead.
 export const SOCIAL = [
   {
@@ -123,6 +126,33 @@ export const SOCIAL = [
     url: "https://twitter.com/YourDrAmreen",
   },
 ];
+
+export const INSTAGRAM = {
+  handle: "@babydoc.amreen",
+  url: "https://www.instagram.com/babydoc.amreen/",
+  // Rounded figure as he gave it on 4 Oct 2026. Update by hand when it moves.
+  followers: "92,000",
+  // Her own bio line, word for word.
+  bio: "Helping you raise healthy, happy kids",
+};
+
+// Reels shown on the site. Titles are our own short labels; the videos are
+// hers and play from Instagram only when a visitor taps to load them.
+export const REELS = [
+  { id: "DWyLCw2koaU", title: "Why teething necklaces are not safe for babies" },
+  { id: "DLSFqdqpWkJ", title: "Why the bottle should stop at two" },
+  { id: "DdwJfaMyx4M", title: "A dark neck in children is not always dirt" },
+  { id: "DdtlEqXSUM3", title: "Your baby does not need powder" },
+];
+export const REEL_FOR_MOTHERS = {
+  id: "DR1inIuEuxs",
+  title: "For every mama who has felt invisible: a reading from Dear Mama",
+};
+
+// WhatsApp vaccine reminders from the planner on /vaccination-guide.
+// Needs the public.amreen_vaccine_reminders table in Supabase. While false,
+// the planner offers the calendar download only and stores nothing.
+export const VACCINE_REMINDERS_ENABLED = false;
 
 export const SUPABASE = {
   url: "https://grxgmheazdfcbortpygr.supabase.co",

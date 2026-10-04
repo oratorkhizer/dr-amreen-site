@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { BOOK, DOCTOR } from "../../data/site";
 import "../../styles/Home/HomeBook.css";
 
@@ -49,6 +50,10 @@ const HomeBook = () => {
             <span>Get it on Amazon</span>
             <span aria-hidden="true">↗</span>
           </a>
+
+          <NavLink className="home-book-more" to="/new-mothers">
+            Expecting? Meet your baby's doctor before the birth →
+          </NavLink>
         </div>
       </div>
     </section>

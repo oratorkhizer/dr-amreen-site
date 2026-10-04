@@ -1,4 +1,5 @@
 import React from "react";
+import { BOOKING_URL } from "../data/site";
 import CareIcon from "../components/common/CareIcon";
 import { NavLink } from "react-router-dom";
 import "../styles/PediatricCare.css";
@@ -88,7 +89,7 @@ const PediatricCare = () => {
 
             <div className="pediatric-care-hero-actions">
               <a
-                href="https://www.eka.care/doctor/dr-amreen-pediatrician?cid=68032f8d25be81001d3d562e&utm_source=%2Fclinic%2F%5Bclinicslug%5D&utm_medium=eka-web&utm_campaign=web-navigation"
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="pediatric-care-primary-button"
@@ -351,7 +352,7 @@ const PediatricCare = () => {
             </p>
 
             <a
-              href="https://www.eka.care/doctor/dr-amreen-pediatrician?cid=68032f8d25be81001d3d562e&utm_source=%2Fclinic%2F%5Bclinicslug%5D&utm_medium=eka-web&utm_campaign=web-navigation"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="pediatric-care-cta-button"

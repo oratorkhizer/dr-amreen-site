@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { DOCTOR, CLINIC, OPD } from "../../data/site";
+import { DOCTOR, CLINIC, OPD, INSTAGRAM } from "../../data/site";
 import "../../styles/Home/HomeHero.css";
 
 const HomeHero = () => {
@@ -12,19 +12,21 @@ const HomeHero = () => {
             <span className="home-hero-eyebrow-dot"></span>
 
             <span className="home-hero-eyebrow-text">
-              Compassionate Pediatric Care
+              Pediatrician, mom of 3, author
             </span>
           </div>
 
           <h1 className="home-hero-title">
-            Little smiles deserve
-            <span className="home-hero-title-highlight">gentle care.</span>
+            Your child's doctor,
+            <span className="home-hero-title-highlight">and a mom of three.</span>
           </h1>
 
           <p className="home-hero-description">
-            Pediatric care at Caspian Healthcare, Hyderabad. Newborn checks,
-            growth and development, immunisation and childhood illness, from the
-            first days through every stage of childhood.
+            {DOCTOR.name} sees children from the first week of life to the
+            teenage years at {CLINIC.name}, Hyderabad. A gold medallist trained
+            at Niloufer Hospital, author of Dear Mama, and followed by{" "}
+            {INSTAGRAM.followers} parents on Instagram for plain, practical
+            advice.
           </p>
 
           <div className="home-hero-actions">
@@ -88,10 +90,10 @@ const HomeHero = () => {
             <div className="home-hero-floating-icon">♡</div>
 
             <div className="home-hero-floating-content">
-              <span className="home-hero-floating-label">Child First</span>
+              <span className="home-hero-floating-label">On Instagram</span>
 
               <strong className="home-hero-floating-title">
-                Gentle & Caring
+                {INSTAGRAM.followers} parents
               </strong>
             </div>
           </div>

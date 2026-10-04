@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BOOKING_URL } from "../data/site";
 import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 
@@ -86,7 +87,7 @@ const Navbar = () => {
            ========================================= */}
 
         <a
-          href="https://www.eka.care/doctor/dr-amreen-pediatrician?cid=68032f8d25be81001d3d562e&utm_source=%2Fclinic%2F%5Bclinicslug%5D&utm_medium=eka-web&utm_campaign=web-navigation"
+          href={BOOKING_URL}
           className="navbar-appointment"
           target="_blank"
           rel="noopener noreferrer"
@@ -194,7 +195,7 @@ const Navbar = () => {
           ))}
 
           <a
-            href="https://www.eka.care/doctor/dr-amreen-pediatrician?cid=68032f8d25be81001d3d562e&utm_source=%2Fclinic%2F%5Bclinicslug%5D&utm_medium=eka-web&utm_campaign=web-navigation"
+            href={BOOKING_URL}
             className="navbar-mobile-appointment"
             target="_blank"
             rel="noopener noreferrer"

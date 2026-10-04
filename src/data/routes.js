@@ -57,19 +57,25 @@ export const ROUTES = [
     path: "/vaccination-guide",
     title: "Childhood Vaccination Guide | Dr. Amreen, Hyderabad",
     description:
-      "Which vaccines are due at which age, what a missed dose means, normal reactions after a vaccine, and when to call the clinic.",
+      "The IAP 2023 vaccine schedule, and a planner that gives the exact date of every visit from your child's date of birth. Missed doses, normal reactions and when to call.",
   },
   {
     path: "/growth-development",
     title: "Growth and Development Milestones | Dr. Amreen",
     description:
-      "Check where your child falls on the WHO and IAP growth charts, and the movement, speech and social milestones to expect from birth to five years. When a delay needs assessment.",
+      "Check where your child falls on the WHO and IAP growth charts, and tick off the milestones for your child's age from 2 months to 5 years. When a delay needs assessment.",
   },
   {
     path: "/childhood-illnesses",
     title: "Common Childhood Illnesses | Dr. Amreen, Hyderabad",
     description:
       "Fever, cough and cold, loose motions, vomiting, ear pain and rashes. What usually settles at home and the warning signs that need a doctor now.",
+  },
+  {
+    path: "/new-mothers",
+    title: "Expecting a Baby? Meet Your Pediatrician First | Dr. Amreen",
+    description:
+      "See Dr. Amreen in the last two months of pregnancy: feeding, the first vaccines, jaundice and the first weeks at home. A printable first six weeks checklist, and her book Dear Mama.",
   },
 ];
 

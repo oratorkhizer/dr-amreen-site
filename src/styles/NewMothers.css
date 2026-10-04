@@ -1,0 +1,38 @@
+.new-mothers-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; margin-top: 28px; }
+.new-mothers-button { display: inline-flex; align-items: center; gap: 8px; min-height: 50px; padding: 0 24px; border-radius: 999px; background: var(--color-secondary); color: var(--color-heading-dark); font-weight: 800; text-decoration: none; }
+.new-mothers-button:hover { background: #f6b6a1; }
+.new-mothers-fee { color: #d6efec; font-size: 15px; }
+.new-mothers-section { padding: 68px 0; }
+.new-mothers-section:nth-of-type(odd) { background: var(--color-background-warm); }
+.new-mothers-two { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+.new-mothers-heading { margin: 0 0 10px; color: var(--color-heading); font-size: clamp(26px, 3.4vw, 36px); line-height: 1.2; }
+.new-mothers-heading em { font-family: var(--font-serif); font-weight: 500; color: var(--color-primary); }
+.new-mothers-lead { margin: 0; color: var(--color-text); font-size: 17px; line-height: 1.7; }
+.new-mothers-talk { list-style: none; margin: 0; padding: 0; counter-reset: talk; display: grid; gap: 14px; }
+.new-mothers-talk li { counter-increment: talk; position: relative; display: flex; flex-direction: column; gap: 4px; padding: 16px 18px 16px 62px; border-radius: 18px; background: var(--color-surface); border: 1px solid var(--color-border); }
+.new-mothers-talk li::before { content: counter(talk); position: absolute; left: 16px; top: 16px; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--color-primary-light); color: var(--color-primary-deep); font-family: var(--font-serif); font-style: italic; font-weight: 700; }
+.new-mothers-talk strong { color: var(--color-heading); font-size: 17px; }
+.new-mothers-talk span { color: var(--color-text); line-height: 1.6; }
+.new-mothers-checklist-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; }
+.new-mothers-print { min-height: 48px; padding: 0 22px; border-radius: 999px; background: #fff; border: 1.5px solid var(--color-primary); color: var(--color-primary-deep); font: inherit; font-weight: 700; cursor: pointer; }
+.new-mothers-print:hover { background: var(--color-primary-light); }
+.new-mothers-checklist { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.new-mothers-checklist label { display: grid; grid-template-columns: 24px 1fr; gap: 4px 12px; height: 100%; box-sizing: border-box; padding: 16px; border-radius: 16px; background: var(--color-surface); border: 1px dashed #b9d6d2; cursor: pointer; }
+.new-mothers-checklist label.is-done { background: var(--color-primary-soft); border-style: solid; border-color: #bfe3df; }
+.new-mothers-checklist input { grid-row: span 2; width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--color-primary); }
+.new-mothers-when { font-family: var(--font-serif); font-style: italic; color: var(--color-secondary-text); font-size: 15px; }
+.new-mothers-what { color: var(--color-heading); font-size: 15px; line-height: 1.55; }
+.new-mothers-small { margin: 22px 0 0; max-width: 820px; color: var(--color-text); font-size: 15px; line-height: 1.7; }
+.new-mothers-small a { color: var(--color-primary-dark); font-weight: 700; }
+.new-mothers-book { display: grid; grid-template-columns: 220px 1fr 240px; gap: 36px; align-items: center; }
+.new-mothers-cover { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 18px 40px rgba(23, 79, 80, 0.18); }
+.new-mothers-strap { margin: 0 0 12px; font-family: var(--font-serif); font-style: italic; color: var(--color-primary-dark); font-size: 18px; }
+.new-mothers-book-text .new-mothers-lead { margin-bottom: 20px; }
+@media (max-width: 1000px) { .new-mothers-checklist { grid-template-columns: repeat(2, minmax(0, 1fr)); } .new-mothers-book { grid-template-columns: 180px 1fr; } .new-mothers-reel { grid-column: 1 / -1; max-width: 280px; } }
+@media (max-width: 700px) { .new-mothers-two { grid-template-columns: 1fr; gap: 20px; } .new-mothers-section { padding: 48px 0; } .new-mothers-checklist { grid-template-columns: 1fr; } .new-mothers-book { grid-template-columns: 1fr; } .new-mothers-cover { max-width: 200px; } .new-mothers-button { width: 100%; justify-content: center; } }
+@media print {
+  .navbar-head, footer, .article-hero, .new-mothers-section:not(.new-mothers-checklist-wrap), .article-disclaimer, .new-mothers-print, .skip-link { display: none !important; }
+  .new-mothers-checklist-wrap { padding: 0; background: #fff !important; }
+  .new-mothers-checklist { grid-template-columns: 1fr 1fr; }
+  .new-mothers-checklist label { border: 1px solid #999; }
+}

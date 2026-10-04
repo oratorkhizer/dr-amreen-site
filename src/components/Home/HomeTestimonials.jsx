@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import CareIcon from "../common/CareIcon";
-import { GOOGLE_REVIEWS_URL } from "../../data/site";
+import { GOOGLE_REVIEWS_URL, GOOGLE_WRITE_REVIEW_URL } from "../../data/site";
 import "../../styles/Home/HomeTestimonials.css";
 
 const HomeTestimonials = () => {
@@ -99,7 +99,7 @@ const HomeTestimonials = () => {
 
           <p className="home-testimonials-description">
             These are short extracts from reviews parents left publicly. You can
-            read all of them, unedited, on the listing below.
+            read all of them, unedited, on her Google profile.
           </p>
         </div>
 
@@ -139,7 +139,16 @@ const HomeTestimonials = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Read all reviews ↗
+                    Read all reviews on Google ↗
+                  </a>
+
+                  <a
+                    className="home-testimonials-card-source home-testimonials-write"
+                    href={GOOGLE_WRITE_REVIEW_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Seen Dr. Amreen? Leave a review ↗
                   </a>
                 </div>
 

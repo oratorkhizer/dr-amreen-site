@@ -1,0 +1,25 @@
+/* Milestone check on /growth-development. Site tokens only. */
+.milestones { margin: 40px 0 8px; }
+.milestones-heading { margin: 0 0 8px; color: var(--color-heading); font-size: clamp(24px, 3vw, 30px); line-height: 1.2; }
+.milestones-intro { margin: 0 0 18px; color: var(--color-text); font-size: 16px; line-height: 1.65; }
+.milestones-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 18px; background: var(--color-surface); border: 1px solid #cfe6e3; border-radius: 16px; padding: 20px; }
+.milestones-form label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; color: var(--color-heading); font-size: 15px; }
+.milestones-form input, .milestones-form select { min-height: 46px; padding: 10px 12px; border: 1px solid #b9d6d2; border-radius: 10px; font: inherit; color: var(--color-text); background: #fff; width: 100%; box-sizing: border-box; }
+.milestones-form input:focus, .milestones-form select:focus { outline: 3px solid rgba(47, 133, 129, 0.25); border-color: var(--color-primary); }
+.milestones-error { margin: 14px 0 0; padding: 12px 16px; border-radius: 10px; background: var(--color-secondary-soft); color: var(--color-secondary-text); font-weight: 600; }
+.milestones-result { margin-top: 20px; }
+.milestones-age { margin: 0 0 12px; color: var(--color-text); }
+.milestones-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.milestones-list label { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; border-radius: 14px; background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-heading); font-size: 16px; line-height: 1.5; cursor: pointer; }
+.milestones-list label.is-ticked { background: var(--color-primary-soft); border-color: #bfe3df; }
+.milestones-list input { width: 22px; height: 22px; margin-top: 1px; flex: none; accent-color: var(--color-primary); }
+.milestones-button { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0; background: var(--color-primary); color: #fff; font: inherit; font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer; }
+.milestones-button:hover { background: var(--color-primary-dark); }
+.milestones-check { margin-top: 16px; }
+.milestones-verdict { margin-top: 16px; padding: 16px 18px; border-radius: 14px; border-left: 5px solid var(--color-primary); background: var(--color-surface-soft); }
+.milestones-verdict p { margin: 0 0 12px; color: var(--color-heading); font-weight: 600; line-height: 1.6; }
+.milestones-verdict.tone-ok p { margin: 0; }
+.milestones-verdict.tone-watch { border-left-color: var(--color-yellow); background: var(--color-yellow-light); }
+.milestones-verdict.tone-see { border-left-color: var(--color-secondary-dark); background: var(--color-secondary-soft); }
+.milestones-note { margin: 14px 0 0; font-size: 14px; color: var(--color-text); }
+@media (max-width: 560px) { .milestones-form { grid-template-columns: 1fr; padding: 16px; } .milestones-button { width: 100%; justify-content: center; } }

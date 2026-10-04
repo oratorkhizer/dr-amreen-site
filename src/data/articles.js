@@ -6,6 +6,8 @@
 // those boxes must send parents to a hospital emergency department, never to
 // the clinic alone. Do not remove that distinction.
 
+import { VISITS, OPTIONAL_NOTE } from "./vaccines";
+
 export const ARTICLES = {
   "newborn-care": {
     eyebrow: "Parent's Corner",
@@ -128,21 +130,17 @@ export const ARTICLES = {
     title: "Vaccination",
     titleAccent: "what is due, and when.",
     intro:
-      "Vaccines are the simplest thing you can do for your child's health. This is the shape of the schedule we follow, based on the Indian Academy of Pediatrics recommendations. Your child's exact plan is confirmed at the clinic.",
+      "Vaccines are the simplest thing you can do for your child's health. This is the schedule we follow, the Indian Academy of Pediatrics (IAP) 2023 schedule. Your child's exact plan is confirmed at the clinic.",
     sections: [
       {
         heading: "The schedule, in outline",
-        list: [
-          "At birth: BCG, hepatitis B, and oral polio.",
-          "6, 10 and 14 weeks: the main primary course, covering diphtheria, tetanus, whooping cough, polio, hepatitis B, Haemophilus influenzae type b, rotavirus and pneumococcal disease.",
-          "6 and 9 months: influenza, and measles, mumps and rubella.",
-          "12 to 18 months: hepatitis A, chickenpox, MMR second dose, and the first boosters.",
-          "2 years and above: typhoid booster, and further doses as advised.",
-          "4 to 6 years: pre school boosters.",
-          "10 to 12 years: Tdap, and HPV vaccine.",
-        ],
+        list: VISITS.map(
+          (visit) => `${visit.age}: ${visit.vaccines.join("; ")}.`
+        ),
         paragraphs: [
-          "Bring the vaccination card to every visit, including visits for illness. We update it each time.",
+          "After the two flu doses at 6 and 7 months, give a flu vaccine every year before the monsoon, up to 5 years of age.",
+          OPTIONAL_NOTE,
+          "Bring the vaccination card to every visit, including visits for illness. We update it each time. The planner below works out the exact date of each visit from your child's date of birth.",
         ],
       },
       {

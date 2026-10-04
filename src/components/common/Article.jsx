@@ -4,6 +4,8 @@ import { ARTICLES } from "../../data/articles";
 import { DOCTOR, CLINIC, OPD, BOOKING_URL } from "../../data/site";
 import "../../styles/Article.css";
 import GrowthCalculator from "./GrowthCalculator";
+import VaccinePlanner from "./VaccinePlanner";
+import MilestoneChecker from "./MilestoneChecker";
 
 const Article = ({ slug }) => {
   const article = ARTICLES[slug];
@@ -43,8 +45,9 @@ const Article = ({ slug }) => {
       <section className="article-body">
         <div className="article-container article-layout">
           <div className="article-content">
-            {article.sections.map((section) => (
-              <section className="article-section" key={section.heading}>
+            {article.sections.map((section, index) => (
+              <React.Fragment key={section.heading}>
+              <section className="article-section">
                 <h2 className="article-section-heading">{section.heading}</h2>
 
                 {(section.paragraphs || []).map((paragraph) => (
@@ -61,9 +64,12 @@ const Article = ({ slug }) => {
                   </ul>
                 )}
               </section>
+              {slug === "vaccination-guide" && index === 0 && <VaccinePlanner />}
+              </React.Fragment>
             ))}
 
             {slug === "growth-development" && <GrowthCalculator />}
+            {slug === "growth-development" && <MilestoneChecker />}
 
             <aside className="article-flags" role="note">
               <h2 className="article-flags-heading">

@@ -1,0 +1,32 @@
+.home-reels { padding: 76px 20px; background: var(--color-surface); }
+.home-reels-container { max-width: 1200px; margin: 0 auto; }
+.home-reels-header { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: end; margin-bottom: 28px; }
+.home-reels-eyebrow { margin: 0 0 8px; font-family: var(--font-serif); font-style: italic; font-size: 18px; color: var(--color-secondary-text); }
+.home-reels-title { margin: 0; color: var(--color-heading); font-size: clamp(28px, 4vw, 42px); line-height: 1.15; }
+.home-reels-title-accent { font-family: var(--font-serif); font-style: italic; font-weight: 500; color: var(--color-primary); }
+.home-reels-text { margin: 0; color: var(--color-text); font-size: 17px; line-height: 1.65; }
+.home-reels-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.home-reels-follow { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; min-height: 48px; padding: 0 24px; border-radius: 999px; background: var(--color-primary); color: #fff; font-weight: 700; text-decoration: none; }
+.home-reels-follow:hover { background: var(--color-primary-dark); }
+
+.reel-card { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.reel-poster, .reel-frame { width: 100%; aspect-ratio: 9 / 16; border-radius: 22px; border: 0; }
+.reel-frame { background: #000; }
+.reel-poster { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 20px; text-align: left; cursor: pointer; font: inherit; overflow: hidden; }
+.reel-poster::before { content: ""; position: absolute; inset: auto -30% -20% auto; width: 120%; aspect-ratio: 1; border-radius: 50%; background: rgba(255, 255, 255, 0.35); }
+.reel-tone-0 .reel-poster { background: var(--color-primary-light); }
+.reel-tone-1 .reel-poster { background: var(--color-secondary-light); }
+.reel-tone-2 .reel-poster { background: var(--color-yellow-light); }
+.reel-tone-3 .reel-poster { background: var(--color-lavender-light); }
+.reel-play { position: absolute; top: 18px; left: 18px; width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; background: var(--color-primary-deep); color: #fff; font-size: 18px; padding-left: 3px; box-sizing: border-box; }
+.reel-title { position: relative; font-family: var(--font-serif); font-style: italic; font-size: 22px; line-height: 1.3; color: var(--color-heading); }
+.reel-hint { position: relative; font-size: 14px; color: var(--color-text); }
+.reel-poster:hover .reel-play, .reel-poster:focus-visible .reel-play { background: var(--color-primary); }
+.reel-card figcaption a { font-size: 14px; font-weight: 600; color: var(--color-primary-dark); }
+@media (max-width: 1000px) { .home-reels-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .home-reels-header { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .home-reels { padding: 52px 0 52px 16px; }
+  .home-reels-header, .home-reels-follow { margin-right: 16px; }
+  .home-reels-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding-right: 16px; }
+  .reel-card { flex: 0 0 72%; scroll-snap-align: start; }
+}

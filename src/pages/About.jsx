@@ -1,5 +1,5 @@
 import React from "react";
-import { DOCTOR, CLINIC, OPD, BOOK } from "../data/site";
+import { DOCTOR, CLINIC, OPD, BOOK, BOOKING_URL } from "../data/site";
 import { NavLink } from "react-router-dom";
 import "../styles/About.css";
 
@@ -24,7 +24,7 @@ const About = () => {
 
             <div className="about-hero-actions">
               <a
-                href="https://www.eka.care/doctor/dr-amreen-pediatrician?cid=68032f8d25be81001d3d562e&utm_source=%2Fclinic%2F%5Bclinicslug%5D&utm_medium=eka-web&utm_campaign=web-navigation"
+                href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="about-primary-button"
@@ -325,7 +325,7 @@ const About = () => {
             </p>
 
             <a
-              href="https://www.eka.care/doctor/dr-amreen-pediatrician?cid=68032f8d25be81001d3d562e&utm_source=%2Fclinic%2F%5Bclinicslug%5D&utm_medium=eka-web&utm_campaign=web-navigation"
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="about-cta-button"
