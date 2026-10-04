@@ -123,3 +123,15 @@
 }
 
 .enquiries-empty { font-size: var(--font-lg); color: var(--color-text); }
+
+/* Tabs and the vaccine reminders desk */
+.enquiries-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: -8px 0 22px; }
+.enquiries-tabs button, .reminders-filters button, .reminders-actions button { border-radius: 999px; padding: 10px 18px; font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; border: 1.5px solid var(--color-primary-dark); background: var(--color-white); color: var(--color-primary-deep); }
+.enquiries-tabs button.is-active, .reminders-filters button.is-active { background: var(--color-primary-dark); color: var(--color-white); }
+.reminders-filters button.is-quiet { background: var(--color-white); color: var(--color-primary-deep); }
+.reminders-help { margin: 0 0 16px; color: var(--color-text); line-height: 1.6; }
+.reminders-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.reminders-actions .reminders-wa { background: #1f9d55; border-color: #1f9d55; color: #fff; }
+.reminders-actions button:disabled { opacity: 0.5; cursor: default; }
+.reminders-sent { margin: 10px 0 0; font-size: 14px; color: var(--color-text-light); }
+.reminders-item.is-stopped { opacity: 0.6; }

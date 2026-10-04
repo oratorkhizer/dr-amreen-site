@@ -152,7 +152,7 @@ export const REEL_FOR_MOTHERS = {
 // WhatsApp vaccine reminders from the planner on /vaccination-guide.
 // Needs the public.amreen_vaccine_reminders table in Supabase. While false,
 // the planner offers the calendar download only and stores nothing.
-export const VACCINE_REMINDERS_ENABLED = false;
+export const VACCINE_REMINDERS_ENABLED = true;
 
 export const SUPABASE = {
   url: "https://grxgmheazdfcbortpygr.supabase.co",

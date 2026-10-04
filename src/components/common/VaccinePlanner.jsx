@@ -170,7 +170,7 @@ export default function VaccinePlanner() {
           "Content-Type": "application/json",
           apikey: SUPABASE.anonKey,
           Authorization: `Bearer ${SUPABASE.anonKey}`,
-          Prefer: "return=minimal,resolution=ignore-duplicates",
+          Prefer: "return=minimal",
         },
         body: JSON.stringify({
           parent_name: parentName.trim().slice(0, 80),

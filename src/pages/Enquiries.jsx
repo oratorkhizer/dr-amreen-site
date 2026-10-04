@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { SUPABASE } from "../data/site";
 import "../styles/Enquiries.css";
+import RemindersDesk from "../components/common/RemindersDesk";
 
 // Private inbox for the clinic team. Reads through a SECURITY DEFINER
 // function that checks the passcode, so the anon key alone cannot read
@@ -11,6 +12,29 @@ const Enquiries = () => {
   const [rows, setRows] = useState(null);
   const [status, setStatus] = useState("idle");
   const [search, setSearch] = useState("");
+  const [tab, setTab] = useState("enquiries");
+  const [reminders, setReminders] = useState([]);
+
+  const loadReminders = async (code) => {
+    try {
+      const response = await fetch(
+        `${SUPABASE.url}/rest/v1/rpc/amreen_reminders_list`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: SUPABASE.anonKey,
+            Authorization: `Bearer ${SUPABASE.anonKey}`,
+          },
+          body: JSON.stringify({ passcode: code }),
+        }
+      );
+      const data = await response.json();
+      if (data && data.ok) setReminders(data.rows || []);
+    } catch {
+      // the enquiries tab still works if this fails
+    }
+  };
 
   const load = async (event) => {
     event.preventDefault();
@@ -38,6 +62,7 @@ const Enquiries = () => {
       }
 
       setRows(data.rows || []);
+      await loadReminders(passcode);
       setStatus("ready");
     } catch (error) {
       setStatus("denied");
@@ -75,7 +100,20 @@ const Enquiries = () => {
   return (
     <main className="enquiries-page" id="main-content">
       <div className="enquiries-container">
-        <h1 className="enquiries-title">Enquiries inbox</h1>
+        <h1 className="enquiries-title">
+          {tab === "reminders" ? "Vaccine reminders" : "Enquiries inbox"}
+        </h1>
+
+        {status === "ready" && (
+          <div className="enquiries-tabs" role="tablist">
+            <button type="button" role="tab" aria-selected={tab === "enquiries"} className={tab === "enquiries" ? "is-active" : ""} onClick={() => setTab("enquiries")}>
+              Enquiries ({rows.length})
+            </button>
+            <button type="button" role="tab" aria-selected={tab === "reminders"} className={tab === "reminders" ? "is-active" : ""} onClick={() => setTab("reminders")}>
+              Vaccine reminders ({reminders.length})
+            </button>
+          </div>
+        )}
 
         {status !== "ready" ? (
           <form className="enquiries-gate" onSubmit={load}>
@@ -100,6 +138,8 @@ const Enquiries = () => {
               </p>
             )}
           </form>
+        ) : tab === "reminders" ? (
+          <RemindersDesk passcode={passcode} rows={reminders} onChange={() => loadReminders(passcode)} />
         ) : (
           <>
             <div className="enquiries-toolbar">
