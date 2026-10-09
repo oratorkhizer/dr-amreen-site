@@ -22,6 +22,19 @@ if (!existsSync(join(dist, "index.html"))) {
 
 const shell = readFileSync(join(dist, "index.html"), "utf8");
 
+// Each page's real content, rendered at build time by src/entry-server.jsx
+// (built into dist-ssr by `vite build --ssr`). If that build is missing, or a
+// page fails to render, the page ships as before (empty root, filled by the
+// browser), so this can never break the site. 10 Oct 2026: before this, every
+// page reached crawlers with no heading, text or links.
+let render = null;
+try {
+  ({ render } = await import(new URL("../dist-ssr/entry-server.js", import.meta.url).href));
+} catch (error) {
+  console.warn(`build-routes: no server render (${error.message}); pages ship with an empty root`);
+}
+let rendered = 0;
+
 const escape = (value) =>
   value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 
@@ -30,7 +43,7 @@ let written = 0;
 for (const route of routes) {
   const canonical = route.path === "/" ? `${SITE}/` : `${SITE}${route.path}`;
 
-  const html = shell
+  let html = shell
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(route.title)}</title>`)
     .replace(
       /<meta\s+name="description"[\s\S]*?\/>/,
@@ -52,6 +65,17 @@ for (const route of routes) {
       /<meta property="og:url"[^>]*>/,
       `<meta property="og:url" content="${canonical}" />`
     );
+
+  let body = "";
+  if (render) {
+    try {
+      body = await render(route.path);
+      rendered += 1;
+    } catch (error) {
+      console.warn(`build-routes: could not render ${route.path}: ${error.message}`);
+    }
+  }
+  if (body) html = html.replace('<div id="root"></div>', () => `<div id="root">${body}</div>`);
 
   if (route.path === "/") {
     writeFileSync(join(dist, "index.html"), html);
@@ -98,4 +122,4 @@ writeFileSync(
   `User-agent: *\nAllow: /\nDisallow: /enquiries\n\nSitemap: ${SITE}/sitemap.xml\n`
 );
 
-console.log(`build-routes: wrote ${written} route shells, sitemap.xml, robots.txt`);
+console.log(`build-routes: wrote ${written} route pages (${rendered} with rendered content), sitemap.xml, robots.txt`);

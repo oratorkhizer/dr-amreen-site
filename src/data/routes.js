@@ -9,19 +9,19 @@ export const ROUTES = [
     title:
       "Dr. Amreen, Pediatrician in Hyderabad | Caspian Healthcare",
     description:
-      "Dr. Amreen, MBBS MD Pediatrics, is a pediatrician at Caspian Healthcare, Vijaynagar Colony, Hyderabad. Newborn care, growth and development, immunisation and childhood illness. OPD Monday to Saturday, 3 pm to 9 pm.",
+      "Dr. Amreen, MBBS MD Pediatrics, pediatrician at Caspian Healthcare, Vijaynagar Colony, Hyderabad. Newborns, growth, vaccines, illness. Mon to Sat, 3 to 9 pm.",
   },
   {
     path: "/about",
     title: "About Dr. Amreen, Pediatrician, Hyderabad",
     description:
-      "Dr. Amreen, MBBS (Gandhi Medical College), MD Pediatrics (Osmania Medical College and Niloufer Hospital), FAGE Manipal. Gold medallist. Telangana State Medical Council registration TSMC/FMR/04064.",
+      "Dr. Amreen, MBBS (Gandhi Medical College), MD Pediatrics (Osmania Medical College and Niloufer Hospital), FAGE Manipal. Gold medallist. TSMC/FMR/04064.",
   },
   {
     path: "/pediatric-care",
     title: "Pediatric Care at Caspian Healthcare, Hyderabad | Dr. Amreen",
     description:
-      "What Dr. Amreen treats and how a consultation works: newborn checks, growth monitoring, immunisation, nutrition, childhood illness and adolescent health. Consultation Rs 500.",
+      "What Dr. Amreen treats and how a visit works: newborn checks, growth, immunisation, nutrition, childhood illness and adolescent health. Consultation Rs 500.",
   },
   {
     path: "/child-health",
@@ -39,7 +39,7 @@ export const ROUTES = [
     path: "/appointment",
     title: "Book an Appointment with Dr. Amreen, Hyderabad",
     description:
-      "Appointments with Dr. Amreen are booked online. Pick a slot, get a confirmation, and walk in at your time. Consultation Rs 500. OPD Monday to Saturday, 3 pm to 9 pm.",
+      "Book Dr. Amreen online: pick a slot, get a confirmation and walk in at your time. Consultation Rs 500. OPD Monday to Saturday, 3 pm to 9 pm.",
   },
   {
     path: "/newborn-care",
@@ -57,13 +57,13 @@ export const ROUTES = [
     path: "/vaccination-guide",
     title: "Childhood Vaccination Guide | Dr. Amreen, Hyderabad",
     description:
-      "The IAP 2023 vaccine schedule, and a planner that gives the exact date of every visit from your child's date of birth. Missed doses, normal reactions and when to call.",
+      "The IAP 2023 vaccine schedule, a planner that dates every visit from your child's birth date, missed doses, normal reactions and when to call.",
   },
   {
     path: "/growth-development",
     title: "Growth and Development Milestones | Dr. Amreen",
     description:
-      "Check where your child falls on the WHO and IAP growth charts, and tick off the milestones for your child's age from 2 months to 5 years. When a delay needs assessment.",
+      "Check your child on the WHO and IAP growth charts, tick off milestones from 2 months to 5 years, and know when a delay needs assessment.",
   },
   {
     path: "/childhood-illnesses",
@@ -75,7 +75,7 @@ export const ROUTES = [
     path: "/new-mothers",
     title: "Expecting a Baby? Meet Your Pediatrician First | Dr. Amreen",
     description:
-      "See Dr. Amreen in the last two months of pregnancy: feeding, the first vaccines, jaundice and the first weeks at home. A printable first six weeks checklist, and her book Dear Mama.",
+      "Meet Dr. Amreen in the last two months of pregnancy: feeding, first vaccines, jaundice, the first weeks at home, a six-week checklist and her book Dear Mama.",
   },
 ];
 

@@ -78,7 +78,12 @@ const Layout = () => {
   );
 };
 
-const router = createBrowserRouter([
+// The route table is exported so scripts/build-routes.mjs can render every
+// page to static HTML at build time (via src/entry-server.jsx). Crawlers and
+// link previews then see real headings and text without running JavaScript.
+// The browser router is created on first render, never at import time, so
+// this file can be imported in Node.
+export const routes = [
   {
     path: "/",
     element: <Layout />,
@@ -158,9 +163,13 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+,
+];
+
+let router;
 
 const App = () => {
+  if (!router) router = createBrowserRouter(routes);
   return <RouterProvider router={router} />;
 };
 

@@ -164,6 +164,15 @@ const Article = ({ slug }) => {
             consultation, and it is not a diagnosis for your child. If you are
             worried, please bring your child in.
           </p>
+          {/* Named reviewer, 10 Oct 2026 (house rule: every medical page names
+              its reviewer). These guides were reviewed and approved by her
+              before publishing; see src/data/articles.js. No date is printed
+              because none was recorded. */}
+          <p className="article-reviewed">
+            Medically reviewed by <NavLink to="/about">{DOCTOR.name}</NavLink>,{" "}
+            {DOCTOR.speciality}, {DOCTOR.qualifications}.{" "}
+            {DOCTOR.registrationCouncil} {DOCTOR.registration}.
+          </p>
         </div>
       </section>
     </main>

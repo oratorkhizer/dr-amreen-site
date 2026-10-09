@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "vite build && node scripts/build-routes.mjs",
+  "buildCommand": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/build-routes.mjs",
   "trailingSlash": false,
   "headers": [
     {
