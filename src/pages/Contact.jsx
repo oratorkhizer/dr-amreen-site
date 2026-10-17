@@ -4,8 +4,9 @@ import {
   CLINIC,
   OPD,
   BOOKING_URL,
-  SUPABASE,
 } from "../data/site";
+import { useTurnstile } from "../lib/useTurnstile";
+import { HUMAN_CHECK_FAILED } from "../lib/turnstile";
 import "../styles/Contact.css";
 
 const SUBJECTS = [
@@ -28,6 +29,8 @@ const Contact = () => {
   const [contactFormData, setContactFormData] = useState(EMPTY_FORM);
   const [status, setStatus] = useState("idle");
   const [errorText, setErrorText] = useState("");
+  const [trap, setTrap] = useState("");
+  const { slot: humanSlot, ...human } = useTurnstile();
 
   const contactHandleChange = (event) => {
     const { name, value } = event.target;
@@ -53,25 +56,30 @@ const Contact = () => {
     setErrorText("");
 
     try {
-      const response = await fetch(
-        `${SUPABASE.url}/rest/v1/${SUPABASE.table}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            apikey: SUPABASE.anonKey,
-            Authorization: `Bearer ${SUPABASE.anonKey}`,
-            Prefer: "return=minimal",
-          },
-          body: JSON.stringify({
-            name: contactFormData.name.trim(),
-            phone: contactFormData.phone.trim(),
-            email: contactFormData.email.trim() || null,
-            subject: contactFormData.subject,
-            message: contactFormData.message.trim(),
-          }),
-        }
-      );
+      const ms = human.elapsed();
+      const turnstile = await human.getToken();
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: contactFormData.name.trim(),
+          phone: contactFormData.phone.trim(),
+          email: contactFormData.email.trim() || null,
+          subject: contactFormData.subject,
+          message: contactFormData.message.trim(),
+          website: trap,
+          ms,
+          turnstile,
+        }),
+      });
+      human.reset();
+
+      if (response.status === 400) {
+        const data = await response.json().catch(() => ({}));
+        setStatus("error");
+        setErrorText(data.error || HUMAN_CHECK_FAILED);
+        return;
+      }
 
       if (!response.ok) {
         throw new Error(`Request failed with status ${response.status}`);
@@ -79,7 +87,8 @@ const Contact = () => {
 
       setStatus("sent");
       setContactFormData(EMPTY_FORM);
-    } catch (error) {
+    } catch {
+      human.reset();
       setStatus("error");
       setErrorText(
         "Sorry, the enquiry could not be sent. Please call the clinic on " +
@@ -373,6 +382,18 @@ const Contact = () => {
                       required
                     />
                   </div>
+
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={trap}
+                    onChange={(event) => setTrap(event.target.value)}
+                    style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                  />
+                  <div ref={humanSlot} />
 
                   {status === "error" && (
                     <p className="contact-form-error" role="alert">

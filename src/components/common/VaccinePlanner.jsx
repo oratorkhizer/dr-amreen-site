@@ -9,9 +9,10 @@ import {
   BOOKING_URL,
   CLINIC,
   DOCTOR,
-  SUPABASE,
   VACCINE_REMINDERS_ENABLED,
 } from "../../data/site";
+import { useTurnstile } from "../../lib/useTurnstile";
+import { HUMAN_CHECK_FAILED } from "../../lib/turnstile";
 import "../../styles/Planner.css";
 
 /*
@@ -112,6 +113,8 @@ export default function VaccinePlanner() {
   const [consent, setConsent] = useState(false);
   const [honeypot, setHoneypot] = useState("");
   const [sendState, setSendState] = useState("idle");
+  const [humanError, setHumanError] = useState("");
+  const { slot: humanSlot, ...human } = useTurnstile();
   const [showAll, setShowAll] = useState(false);
 
   const now = today();
@@ -163,15 +166,13 @@ export default function VaccinePlanner() {
       return;
     }
     setSendState("sending");
+    setHumanError("");
     try {
-      const response = await fetch(`${SUPABASE.url}/rest/v1/amreen_vaccine_reminders`, {
+      const ms = human.elapsed();
+      const turnstile = await human.getToken();
+      const response = await fetch("/api/vaccine-reminder", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: SUPABASE.anonKey,
-          Authorization: `Bearer ${SUPABASE.anonKey}`,
-          Prefer: "return=minimal",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           parent_name: parentName.trim().slice(0, 80),
           whatsapp: number,
@@ -179,8 +180,18 @@ export default function VaccinePlanner() {
           child_dob: dobText,
           consent: true,
           source_path: "/vaccination-guide",
+          website: honeypot,
+          ms,
+          turnstile,
         }),
       });
+      human.reset();
+      if (response.status === 400) {
+        const data = await response.json().catch(() => ({}));
+        setHumanError(data.error || HUMAN_CHECK_FAILED);
+        setSendState("error");
+        return;
+      }
       if (response.ok || response.status === 409) {
         setSendState("done");
         if (window.va) window.va("event", { name: "vaccine_reminder_signup" });
@@ -188,6 +199,7 @@ export default function VaccinePlanner() {
         setSendState("error");
       }
     } catch {
+      human.reset();
       setSendState("error");
     }
   };
@@ -350,6 +362,7 @@ export default function VaccinePlanner() {
                     value={honeypot}
                     onChange={(event) => setHoneypot(event.target.value)}
                   />
+                  <div ref={humanSlot} />
                   <label className="planner-consent">
                     <input
                       type="checkbox"
@@ -374,7 +387,7 @@ export default function VaccinePlanner() {
                   )}
                   {sendState === "error" && (
                     <p className="planner-error">
-                      That did not go through. Please try again, or call {CLINIC.phone}.
+                      {humanError || <>That did not go through. Please try again, or call {CLINIC.phone}.</>}
                     </p>
                   )}
                 </>
