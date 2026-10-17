@@ -3,7 +3,7 @@
 // TURNSTILE_SITEKEY: the Caspian Studio client site key goes here, once.
 // While it is empty the widget is not rendered and forms behave as before
 // (honeypot and fill time are still sent).
-export const TURNSTILE_SITEKEY = "";
+export const TURNSTILE_SITEKEY = "0x4AAAAAAFZKPs2dJMNMwtoC";
 
 export const HUMAN_CHECK_FAILED =
   "We could not confirm this was sent by a person. Please refresh the page and try again.";
