@@ -1,0 +1,302 @@
+/* =========================================================
+   babydocamreen.com look, Nov 2026 redesign.
+   Loaded after every other stylesheet (imported last in App.jsx).
+
+   Registry check, 3 Nov 2026: Fredoka (headings) and Onest (body)
+   are used by no other studio site. Main colour blueberry #5B4B8A
+   (nearest other site 16.8 apart), accent sage #8EC5A4 (nearest
+   18.4 apart). No tracked uppercase labels, no italic serif second
+   lines, no dark band before the footer.
+   ========================================================= */
+
+:root:root {
+  --color-primary: #5b4b8a;
+  --color-primary-dark: #4a3c75;
+  --color-primary-deep: #2e2552;
+  --color-primary-light: #ece8f6;
+  --color-primary-soft: #f7f5fc;
+
+  --color-secondary: #8ec5a4;
+  --color-secondary-dark: #5e9c78;
+  --color-secondary-text: #3f7a57;
+  --color-secondary-light: #e3f2e9;
+  --color-secondary-soft: #f2f9f4;
+
+  --color-mint: #8ec5a4;
+  --color-mint-light: #e3f2e9;
+  --color-lavender: #d9d2ef;
+  --color-lavender-light: #f4f1fb;
+  --color-yellow: #f6d991;
+  --color-yellow-light: #fff6dc;
+  --color-sky: #cfe4f2;
+  --color-sky-light: #eef6fb;
+
+  --color-background: #fffbf5;
+  --color-background-soft: #fbf5ec;
+  --color-background-warm: #fff7ee;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fdf9f3;
+  --color-surface-muted: #f6f0e7;
+  --color-cream: #fbf5ec;
+
+  --color-heading: #2a2340;
+  --color-heading-dark: #1f1a31;
+  --color-text: #4a4458;
+  --color-text-light: #5d576b;
+  --color-muted: #6b6578;
+  --color-black: #1f1a31;
+
+  --color-border: #ece4d8;
+  --color-border-light: #f3ede4;
+  --color-border-dark: #ddd3c5;
+
+  --font-heading: "Fredoka", "Onest", system-ui, sans-serif;
+  --font-primary: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-secondary: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* The old italic serif accent face is retired; anything still asking
+     for it gets the heading face, upright. */
+  --font-serif: "Fredoka", "Onest", system-ui, sans-serif;
+
+  --shadow-xs: 0 2px 8px rgba(42, 35, 64, 0.04);
+  --shadow-sm: 0 5px 18px rgba(42, 35, 64, 0.06);
+  --shadow-md: 0 10px 30px rgba(42, 35, 64, 0.08);
+  --shadow-lg: 0 18px 45px rgba(42, 35, 64, 0.1);
+  --shadow-xl: 0 25px 65px rgba(42, 35, 64, 0.12);
+  --shadow-primary: 0 12px 30px rgba(91, 75, 138, 0.2);
+  --shadow-secondary: 0 12px 30px rgba(142, 197, 164, 0.22);
+  --focus-ring: 0 0 0 4px rgba(91, 75, 138, 0.2);
+  --section-padding: 88px;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* No italic second lines anywhere: the old "bold line + italic serif
+   line" heading formula is gone. Real <em> and <i> keep their italics. */
+body *:not(em):not(i):not(cite) {
+  font-style: normal !important;
+}
+
+/* Heading accent words: same face, blueberry, with a sage marker
+   stroke under them instead of a change of font. */
+[class*="title-accent"],
+[class*="title-highlight"],
+[class*="heading-accent"],
+[class*="titleAccent"] {
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  color: var(--color-primary) !important;
+  background: none !important;
+  text-decoration: underline;
+  text-decoration-color: rgba(142, 197, 164, 0.7);
+  text-decoration-thickness: 0.14em;
+  text-underline-offset: 0.14em;
+  text-decoration-skip-ink: none;
+}
+/* On the few violet panels the accent turns sage so it stays readable. */
+.about-credentials [class*="-accent"],
+.pediatric-care-stages [class*="-accent"],
+.child-health-intro [class*="-accent"] {
+  color: #bfe3cc !important;
+}
+
+/* No small tracked capitals: section labels read as plain sentence case. */
+body *:not(input):not(select):not(textarea) {
+  text-transform: none !important;
+}
+.site-footer-heading,
+.navbar-brand-speciality,
+.about-section-label p,
+.about-credential-item span,
+.appointment-eyebrow,
+.appointment-fact-label,
+.child-health-feature-image-caption span,
+.home-book-badge-label,
+.home-book-eyebrow,
+.home-hero-eyebrow-text,
+.article-eyebrow,
+.article-card-list dt,
+.contact-hero-line-text,
+.contact-detail-content small,
+[class*="eyebrow"],
+[class*="section-label"],
+[class*="-tag"] {
+  letter-spacing: 0 !important;
+}
+[class*="eyebrow"],
+[class*="section-label"] {
+  font-family: var(--font-heading) !important;
+  font-weight: 500 !important;
+  color: var(--color-secondary-text) !important;
+}
+
+.navbar-brand-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+.navbar-brand-speciality {
+  font-size: 12px !important;
+  color: var(--color-secondary-text);
+}
+
+/* Old decorative "+ heart tick" bubbles and floating dots go. */
+.home-hero-trust-avatars,
+.navbar-decoration,
+.child-health-hero-shape {
+  display: none !important;
+}
+
+/* Reels: real cover frames from Instagram, loaded when in view. */
+.reel-frame { border-radius: 18px; background: var(--color-primary-light); }
+
+/* ---------- Phone action bar (all pages) ---------- */
+.phone-bar { display: none; }
+@media (max-width: 760px) {
+  .phone-bar {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    z-index: 900;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 6px;
+    padding: 6px;
+    border-radius: 18px;
+    background: rgba(255, 251, 245, 0.96);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px rgba(42, 35, 64, 0.16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+  .phone-bar a {
+    min-height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--color-primary-deep);
+    background: var(--color-primary-soft);
+  }
+  .phone-bar a.phone-bar-book {
+    background: var(--color-primary);
+    color: #fff;
+  }
+  body { padding-bottom: 84px; }
+}
+
+/* ---------- Guide pages: light hero with an illustrative photo ---------- */
+.article-hero {
+  background:
+    radial-gradient(circle at 95% 10%, rgba(217, 210, 239, 0.75), transparent 38%),
+    var(--color-background) !important;
+  color: var(--color-text) !important;
+  padding: 140px 0 56px !important;
+}
+.article-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 48px;
+  align-items: center;
+}
+.article-breadcrumb { color: var(--color-muted) !important; }
+.article-breadcrumb a { color: var(--color-primary) !important; }
+.article-title { color: var(--color-heading) !important; font-weight: 600 !important; }
+.article-title-accent { display: block; width: fit-content; }
+.article-intro { color: var(--color-text) !important; }
+.article-byline { color: var(--color-muted) !important; }
+.article-hero-photo { margin: 0; }
+.article-hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+}
+.article-hero-photo figcaption,
+.dfm-caption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+.article-section-heading,
+.article-flags-heading { font-weight: 600 !important; }
+@media (max-width: 900px) {
+  .article-hero { padding: 112px 0 40px !important; }
+  .article-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ---------- Filler notes and shapes on inner page heroes ---------- */
+.pediatric-care-hero-note,
+.child-health-hero-note,
+[class*="-hero-shape"] {
+  display: none !important;
+}
+
+/* Bold weights from the old sans look heavy in Fredoka. */
+[class*="-title"]:is(h1, h2, h3),
+[class*="-heading"]:is(h1, h2, h3) {
+  font-weight: 600 !important;
+}
+
+/* ---------- Contact and booking heroes: light like every other page ---------- */
+.contact-hero,
+.appointment-hero {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(217, 210, 239, 0.75), transparent 38%),
+    var(--color-background) !important;
+  color: var(--color-text) !important;
+}
+.contact-hero :is(h1, h2, p, span, small, li, strong),
+.appointment-hero :is(h1, h2, p, span, small, li, strong) {
+  color: inherit;
+}
+.contact-hero h1, .appointment-hero h1 { color: var(--color-heading) !important; }
+.contact-hero p, .appointment-hero p { color: var(--color-text) !important; }
+.appointment-hero .appointment-primary-button {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  box-shadow: 0 3px 0 var(--color-primary-deep);
+}
+.appointment-hero .appointment-primary-button span { color: #fff !important; }
+
+/* Photos that replaced the big empty icon boxes on inner pages. */
+.fill-photo {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  border-radius: inherit;
+  overflow: hidden;
+}
+.fill-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fill-photo-cap {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 3px 9px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  font-size: 12px;
+  color: var(--color-muted);
+}
+.child-health-feature-image-caption { display: none !important; }

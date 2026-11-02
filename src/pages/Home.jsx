@@ -1,46 +1,29 @@
 import React from "react";
 
 import HomeDoorMarks from "../components/Home/HomeDoorMarks";
-import HomeHero from "../components/Home/HomeHero";
-import HomeDoctor from "../components/Home/HomeDoctor";
-import HomePediatricCare from "../components/Home/HomePediatricCare";
-import HomeHealthTopics from "../components/Home/HomeHealthTopics";
-import HomeBook from "../components/Home/HomeBook";
-import HomeWhyChoose from "../components/Home/HomeWhyChoose";
-import HomeTestimonials from "../components/Home/HomeTestimonials";
-import HomeAppointment from "../components/Home/HomeAppointment";
-import HomeClinic from "../components/Home/HomeClinic";
-import HomeTools from "../components/Home/HomeTools";
-import HomeReels from "../components/Home/HomeReels";
+import {
+  HomeHero,
+  HomeUrgent,
+  HomeReels,
+  HomeTools,
+  HomeBook,
+  HomeClinic,
+} from "../components/Home/HomeSections";
 
-const Home = () => {
-  return (
-    <main className="home-page" id="main-content">
-      <HomeDoorMarks />
-
-      <HomeHero />
-
-      <HomeDoctor />
-
-      <HomeTools />
-
-      <HomePediatricCare />
-
-      <HomeReels />
-
-      <HomeHealthTopics />
-
-      <HomeBook />
-
-      <HomeWhyChoose />
-
-      <HomeTestimonials />
-
-      <HomeAppointment />
-
-      <HomeClinic />
-    </main>
-  );
-};
+// Nov 2026: hero first, then the door frame marks (the site's signature
+// piece), the emergency note, her Reels, the parent tools, Dear Mama and
+// the clinic. Review extracts are no longer shown on the site; the clinic
+// section links to her Google profile instead.
+const Home = () => (
+  <main className="home-page" id="main-content">
+    <HomeHero />
+    <HomeDoorMarks />
+    <HomeUrgent />
+    <HomeReels />
+    <HomeTools />
+    <HomeBook />
+    <HomeClinic />
+  </main>
+);
 
 export default Home;

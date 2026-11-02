@@ -10,8 +10,9 @@
 .home-reels-follow:hover { background: var(--color-primary-dark); }
 
 .reel-card { margin: 0; display: flex; flex-direction: column; gap: 8px; }
-.reel-poster, .reel-frame { width: 100%; aspect-ratio: 9 / 16; border-radius: 22px; border: 0; }
-.reel-frame { background: #000; }
+.reel-frame { width: 100%; height: 560px; border-radius: 18px; border: 1px solid var(--color-border); display: block; }
+.reel-card figcaption { font-family: var(--font-heading); font-weight: 500; font-size: 17px; color: var(--color-heading); }
+.reel-frame { background: var(--color-primary-soft); }
 .reel-poster { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 20px; text-align: left; cursor: pointer; font: inherit; overflow: hidden; }
 .reel-poster::before { content: ""; position: absolute; inset: auto -30% -20% auto; width: 120%; aspect-ratio: 1; border-radius: 50%; background: rgba(255, 255, 255, 0.35); }
 .reel-tone-0 .reel-poster { background: var(--color-primary-light); }

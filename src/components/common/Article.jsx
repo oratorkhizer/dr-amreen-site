@@ -17,7 +17,8 @@ const Article = ({ slug }) => {
   return (
     <main className="article-page" id="main-content">
       <section className="article-hero">
-        <div className="article-container">
+        <div className="article-container article-hero-grid">
+          <div>
           <nav className="article-breadcrumb" aria-label="Breadcrumb">
             <NavLink to="/">Home</NavLink>
             <span aria-hidden="true">›</span>
@@ -39,6 +40,18 @@ const Article = ({ slug }) => {
             Written for parents by {DOCTOR.name}, {DOCTOR.speciality},{" "}
             {CLINIC.name}, Hyderabad.
           </p>
+          </div>
+
+          <figure className="article-hero-photo">
+            <img
+              src={`/assets/images/guides/${slug}.webp`}
+              alt=""
+              width="1200"
+              height="800"
+              fetchPriority="high"
+            />
+            <figcaption>Illustrative image</figcaption>
+          </figure>
         </div>
       </section>
 

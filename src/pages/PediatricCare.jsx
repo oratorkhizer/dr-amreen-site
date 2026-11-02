@@ -1,6 +1,5 @@
 import React from "react";
 import { BOOKING_URL } from "../data/site";
-import CareIcon from "../components/common/CareIcon";
 import { NavLink } from "react-router-dom";
 import "../styles/PediatricCare.css";
 
@@ -174,7 +173,7 @@ const PediatricCare = () => {
           </div>
 
           <div className="pediatric-care-introduction-image">
-            <CareIcon name="growth" className="care-icon-soft" />
+            <figure className="fill-photo"><img src="/assets/images/clinic/childrens-room.webp" alt="The children's room at Caspian Healthcare" loading="lazy" decoding="async" /></figure>
           </div>
         </div>
       </section>
@@ -220,7 +219,7 @@ const PediatricCare = () => {
       <section className="pediatric-care-stages">
         <div className="pediatric-care-stages-container">
           <div className="pediatric-care-stages-visual">
-            <CareIcon name="growth" className="care-icon-soft" />
+            <figure className="fill-photo"><img src="/assets/images/guides/growth-development.webp" alt="A smiling young girl sitting outdoors" loading="lazy" decoding="async" /><figcaption className="fill-photo-cap">Illustrative image</figcaption></figure>
 
             <div className="pediatric-care-stages-badge">
               <span>Healthy</span>
@@ -278,7 +277,7 @@ const PediatricCare = () => {
 
           <div className="pediatric-care-prevention-layout">
             <div className="pediatric-care-prevention-image">
-              <CareIcon name="listen" className="care-icon-soft" />
+              <figure className="fill-photo"><img src="/assets/images/guides/vaccination-guide.webp" alt="A pediatrician with a baby and mother" loading="lazy" decoding="async" /><figcaption className="fill-photo-cap">Illustrative image</figcaption></figure>
             </div>
 
             <div className="pediatric-care-prevention-list">
@@ -333,7 +332,7 @@ const PediatricCare = () => {
       <section className="pediatric-care-cta">
         <div className="pediatric-care-cta-container">
           <div className="pediatric-care-cta-image">
-            <CareIcon name="adolescent" className="care-icon-soft" />
+            <figure className="fill-photo"><img src="/assets/images/guides/newborn-care.webp" alt="A mother holding her baby" loading="lazy" decoding="async" /><figcaption className="fill-photo-cap">Illustrative image</figcaption></figure>
           </div>
 
           <div className="pediatric-care-cta-content">

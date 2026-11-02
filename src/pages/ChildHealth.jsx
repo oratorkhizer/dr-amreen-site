@@ -1,6 +1,5 @@
 import React from "react";
 import { BOOKING_URL } from "../data/site";
-import CareIcon from "../components/common/CareIcon";
 import { NavLink } from "react-router-dom";
 import "../styles/ChildHealth.css";
 
@@ -84,10 +83,6 @@ const ChildHealth = () => {
                 loading="lazy"
                 decoding="async"
               />
-            </div>
-
-            <div className="child-health-hero-image-small">
-              <CareIcon name="heart" className="care-icon-soft" />
             </div>
 
             <div className="child-health-hero-note">
@@ -183,7 +178,7 @@ const ChildHealth = () => {
         <div className="child-health-container">
           <div className="child-health-feature-layout">
             <div className="child-health-feature-image">
-              <CareIcon name="listen" className="care-icon-soft" />
+              <figure className="fill-photo"><img src="/assets/images/guides/childhood-illnesses.webp" alt="A young child resting with a soft toy" loading="lazy" decoding="async" /><figcaption className="fill-photo-cap">Illustrative image</figcaption></figure>
 
               <div className="child-health-feature-image-caption">
                 <span>Growing well</span>
@@ -270,7 +265,7 @@ const ChildHealth = () => {
             </div>
 
             <div className="child-health-parent-image">
-              <CareIcon name="adolescent" className="care-icon-soft" />
+              <figure className="fill-photo"><img src="/assets/images/guides/child-nutrition.webp" alt="A toddler eating with his hands" loading="lazy" decoding="async" /><figcaption className="fill-photo-cap">Illustrative image</figcaption></figure>
             </div>
           </div>
         </div>

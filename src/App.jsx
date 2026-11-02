@@ -24,6 +24,9 @@ import ChildhoodIllnesses from "./home-pages/ChildhoodIllnesses";
 import ChildHealth from "./pages/ChildHealth";
 import Enquiries from "./pages/Enquiries";
 import NewMothers from "./pages/NewMothers";
+import PhoneBar from "./components/common/PhoneBar";
+// Loaded last so the Nov 2026 look wins over older page styles.
+import "./styles/theme.css";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -74,6 +77,8 @@ const Layout = () => {
       <Outlet />
 
       <Footer />
+
+      <PhoneBar />
     </>
   );
 };

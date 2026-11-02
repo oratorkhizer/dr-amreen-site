@@ -3,8 +3,8 @@
   "short_name": "Dr. Amreen",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f8fcfb",
-  "theme_color": "#2f8581",
+  "background_color": "#fffbf5",
+  "theme_color": "#5b4b8a",
   "icons": [
     { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
     { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }

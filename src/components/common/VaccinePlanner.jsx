@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   planFor,
   parseDob,
@@ -116,6 +116,13 @@ export default function VaccinePlanner() {
   const [humanError, setHumanError] = useState("");
   const { slot: humanSlot, ...human } = useTurnstile();
   const [showAll, setShowAll] = useState(false);
+
+  // The home page hero sends parents here as ?dob=yyyy-mm-dd so the dates
+  // are already worked out when they arrive.
+  useEffect(() => {
+    const fromLink = new URLSearchParams(window.location.search).get("dob");
+    if (fromLink && parseDob(fromLink)) setDobText(fromLink);
+  }, []);
 
   const now = today();
   const maxDob = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(

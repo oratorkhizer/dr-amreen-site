@@ -27,8 +27,8 @@ export const DOCTOR = {
         "Fellow, Academy of General Education, Manipal",
     },
   ],
-  registration: "TSMC/FMR/04064",
-  registrationCouncil: "Telangana State Medical Council",
+  registration: "TGMC/FMR/04064",
+  registrationCouncil: "Telangana Medical Council",
   honour: "Gold medallist",
   consultationFee: 500,
 };

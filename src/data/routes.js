@@ -15,7 +15,7 @@ export const ROUTES = [
     path: "/about",
     title: "About Dr. Amreen, Pediatrician, Hyderabad",
     description:
-      "Dr. Amreen, MBBS (Gandhi Medical College), MD Pediatrics (Osmania Medical College and Niloufer Hospital), FAGE Manipal. Gold medallist. TSMC/FMR/04064.",
+      "Dr. Amreen, MBBS (Gandhi Medical College), MD Pediatrics (Osmania Medical College and Niloufer Hospital), FAGE Manipal. Gold medallist. TGMC/FMR/04064.",
   },
   {
     path: "/pediatric-care",

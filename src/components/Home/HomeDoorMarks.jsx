@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { OPD } from "../../data/site";
+import { OPD, BOOKING_URL } from "../../data/site";
 import "../../styles/Home/HomeDoorMarks.css";
 
 // The home page opening: height marks on a painted door frame. As the parent
@@ -300,9 +300,9 @@ const HomeDoorMarks = () => {
                 Vijaynagar Colony.
               </p>
               <div className="dfm-actions">
-                <NavLink to="/appointment" className="dfm-book" tabIndex={-1}>
+                <a href={BOOKING_URL} className="dfm-book" tabIndex={-1} target="_blank" rel="noopener noreferrer">
                   Book an appointment <span aria-hidden="true">→</span>
-                </NavLink>
+                </a>
                 <NavLink to="/vaccination-guide#vaccine-dates" className="dfm-go" tabIndex={-1}>
                   Vaccine dates
                 </NavLink>
