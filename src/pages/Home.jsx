@@ -1,5 +1,6 @@
 import React from "react";
 
+import HomeDoorMarks from "../components/Home/HomeDoorMarks";
 import HomeHero from "../components/Home/HomeHero";
 import HomeDoctor from "../components/Home/HomeDoctor";
 import HomePediatricCare from "../components/Home/HomePediatricCare";
@@ -15,6 +16,8 @@ import HomeReels from "../components/Home/HomeReels";
 const Home = () => {
   return (
     <main className="home-page" id="main-content">
+      <HomeDoorMarks />
+
       <HomeHero />
 
       <HomeDoctor />
