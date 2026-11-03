@@ -84,6 +84,27 @@ const Article = ({ slug }) => {
             {slug === "growth-development" && <GrowthCalculator />}
             {slug === "growth-development" && <MilestoneChecker />}
 
+            {article.redFlags.now && (
+              <aside className="article-flags article-flags-now" role="note">
+                <h2 className="article-flags-heading">
+                  {article.redFlags.now.title}
+                </h2>
+
+                <ul className="article-flags-list">
+                  {article.redFlags.now.items.map((item) => (
+                    <li key={item.slice(0, 40)}>{item}</li>
+                  ))}
+                </ul>
+
+                <p className="article-flags-note">
+                  Do not wait for an appointment. Go to the nearest hospital
+                  with a children's emergency department, or call 108.{" "}
+                  {CLINIC.name} does not run a paediatric emergency or an
+                  inpatient ward for children.
+                </p>
+              </aside>
+            )}
+
             <aside className="article-flags" role="note">
               <h2 className="article-flags-heading">
                 {article.redFlags.title}
@@ -95,24 +116,32 @@ const Article = ({ slug }) => {
                 ))}
               </ul>
 
-              {article.redFlags.emergency ? (
+              {article.redFlags.emergency && !article.redFlags.now && (
                 <p className="article-flags-note">
                   During OPD hours ({OPD.days}, {OPD.hours}) you can come to{" "}
-                  {CLINIC.name} or call{" "}
-                  <a href={`tel:${CLINIC.phoneE164}`}>{CLINIC.phone}</a>. At any
-                  other time, or if your child looks very unwell, go straight to
-                  the nearest hospital with a children's emergency department.{" "}
-                  {CLINIC.name} does not run a paediatric emergency or an
-                  inpatient ward for children.
+                  {CLINIC.name}. At any other time, or if your child looks very
+                  unwell, go straight to the nearest hospital with a children's
+                  emergency department, or call 108. {CLINIC.name} does not run
+                  a paediatric emergency or an inpatient ward for children.
                 </p>
-              ) : (
+              )}
+
+              <div className="article-flags-actions">
+                <a
+                  className="article-flags-book"
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a visit
+                </a>
                 <a
                   className="article-flags-call"
                   href={`tel:${CLINIC.phoneE164}`}
                 >
-                  Call the clinic on {CLINIC.phone}
+                  Call for advice: {CLINIC.phone}
                 </a>
-              )}
+              </div>
             </aside>
           </div>
 
@@ -148,7 +177,7 @@ const Article = ({ slug }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>Book an Appointment</span>
+                <span>Book a visit</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </div>
@@ -164,6 +193,7 @@ const Article = ({ slug }) => {
                       {item.title}
                     </NavLink>
                   ))}
+                <NavLink to="/new-mothers">For new mothers</NavLink>
               </nav>
             </div>
           </aside>

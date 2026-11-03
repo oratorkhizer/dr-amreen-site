@@ -55,12 +55,17 @@ export const ARTICLES = {
     ],
     redFlags: {
       emergency: true,
+      now: {
+        title: "Go to a hospital emergency department now if your baby",
+        items: [
+          "Is unusually drowsy, floppy or difficult to wake",
+          "Is breathing fast, grunting, or the chest is pulling in",
+          "Has a fever, or feels cold to touch",
+        ],
+      },
       title: "See a doctor the same day if your baby",
       items: [
         "Is feeding poorly, or refuses feeds",
-        "Is unusually drowsy, floppy or difficult to wake",
-        "Has a fever, or feels cold to touch",
-        "Is breathing fast, grunting, or the chest is pulling in",
         "Has yellow skin on the palms and soles",
         "Has fewer wet nappies than usual, or a swollen or red cord stump",
       ],
@@ -78,6 +83,7 @@ export const ARTICLES = {
         heading: "Birth to six months",
         paragraphs: [
           "Only breast milk. Nothing else, not even water, in most climates and situations. If breast milk is not possible, use a formula your paediatrician has advised.",
+          "Before one year: no honey, and no cow's milk as the main drink.",
         ],
       },
       {
@@ -95,7 +101,7 @@ export const ARTICLES = {
       {
         heading: "Iron, calcium and vitamin D",
         paragraphs: [
-          "Iron deficiency is the most common nutrition problem we see in Indian children. Green leafy vegetables, dal, egg, jaggery, ragi and meat all help. Vitamin C from citrus fruit or amla helps iron absorption.",
+          "Iron deficiency is the most common nutrition problem we see in Indian children. Meat, fish, egg, dal, ragi and green leafy vegetables all help. Vitamin C from citrus fruit or amla helps iron absorption.",
           "Milk matters, but too much of it crowds out iron rich food. After one year, about 500 ml of milk a day is usually enough.",
         ],
       },
@@ -169,13 +175,19 @@ export const ARTICLES = {
     ],
     redFlags: {
       emergency: true,
-      title: "After a vaccine, get medical advice the same day if your child has",
+      now: {
+        title: "After a vaccine, go to a hospital emergency department now if your child has",
+        items: [
+          "A fit or seizure",
+          "Swelling of the face or lips, or difficulty breathing",
+          "Unusual drowsiness, or is difficult to wake",
+        ],
+      },
+      title: "Get medical advice the same day if your child has",
       items: [
         "Fever above 102°F, or fever lasting more than two days",
-        "A fit or seizure",
         "Continuous crying for more than three hours",
-        "Unusual drowsiness, or is difficult to wake",
-        "A spreading rash, swelling of the face, or difficulty breathing",
+        "A spreading rash",
       ],
     },
   },

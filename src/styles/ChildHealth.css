@@ -715,3 +715,34 @@
     height: 350px;
   }
 }
+/* Audit 3 Nov 2026: topic cards are now links to the guides; the caption
+   moves to the corner with the small radius so it is never clipped. */
+.child-health-topic-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.child-health-topic-link:focus-visible {
+  outline: 3px solid var(--color-primary-dark);
+  outline-offset: 3px;
+}
+
+.child-health-topic-card-top {
+  margin-bottom: 36px;
+}
+
+.child-health-topic-card {
+  min-height: 0;
+}
+
+.child-health-feature-image .fill-photo-cap {
+  left: auto;
+  right: 16px;
+  bottom: 16px;
+}
+
+.child-health-hero-image-main .fill-photo-cap {
+  left: 22px;
+  bottom: 16px;
+}

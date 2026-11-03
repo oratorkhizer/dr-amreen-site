@@ -99,7 +99,7 @@ const Footer = () => {
               <NavLink to="/new-mothers">For new mothers</NavLink>
               <NavLink to="/contact">Contact</NavLink>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-                Book an Appointment
+                Book a visit
               </a>
               <a
                 href={BOOK.amazonUrl}

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import DateEcho from "../common/DateEcho";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   BOOK,
@@ -43,7 +44,7 @@ export const HomeHero = () => {
     <section className="hm-hero" aria-labelledby="hm-hero-title">
       <div className="hm-wrap hm-hero-grid">
         <div className="hm-hero-copy">
-          <p className="hm-label">Pediatrician · mom of three · author</p>
+          <p className="hm-label">Pediatrician · Caspian Healthcare, Hyderabad</p>
           <h1 className="hm-hero-title" id="hm-hero-title">
             Your child's doctor,{" "}
             <span className="hm-mark">and a mom of three.</span>
@@ -58,8 +59,8 @@ export const HomeHero = () => {
             <a className="hm-btn hm-btn-main" href={BOOKING_URL} {...ext}>
               Book a visit
             </a>
-            <a className="hm-btn hm-btn-soft" href={`tel:${CLINIC.phoneE164}`}>
-              Call {CLINIC.phone}
+            <a className="hm-btn hm-btn-soft" href={CLINIC.mapsUrl} {...ext}>
+              Directions
             </a>
           </div>
 
@@ -113,6 +114,7 @@ export const HomeHero = () => {
               <button type="submit" className="hm-btn hm-btn-main">
                 Show my dates
               </button>
+              <DateEcho value={dob} />
             </label>
           </form>
         </div>

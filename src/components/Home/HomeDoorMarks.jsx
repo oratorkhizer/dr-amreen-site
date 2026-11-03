@@ -301,7 +301,7 @@ const HomeDoorMarks = () => {
               </p>
               <div className="dfm-actions">
                 <a href={BOOKING_URL} className="dfm-book" tabIndex={-1} target="_blank" rel="noopener noreferrer">
-                  Book an appointment <span aria-hidden="true">→</span>
+                  Book a visit <span aria-hidden="true">→</span>
                 </a>
                 <NavLink to="/vaccination-guide#vaccine-dates" className="dfm-go" tabIndex={-1}>
                   Vaccine dates

@@ -52,7 +52,7 @@ const Appointment = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span>Book an Appointment</span>
+            <span>Book a visit</span>
             <span aria-hidden="true">↗</span>
           </a>
 

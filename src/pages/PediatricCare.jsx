@@ -7,33 +7,33 @@ const PediatricCare = () => {
   const pediatricCareAreas = [
     {
       number: "01",
-      title: "Newborn Care",
-      text: "Support and guidance during the important early weeks of your baby's life, including feeding, growth and general wellbeing.",
+      title: "Newborn care",
+      text: "A first check in the first week: weight, feeding, jaundice and the cord. Then a visit at six weeks with the first vaccines.",
     },
     {
       number: "02",
-      title: "Growth & Development",
-      text: "Regular assessment of physical growth and developmental milestones as your child grows.",
+      title: "Growth and development",
+      text: "Weight, height and head size plotted on the growth chart at every visit, and milestones checked for age.",
     },
     {
       number: "03",
-      title: "Childhood Illness",
-      text: "Assessment and care for common childhood illnesses, with clear guidance for parents.",
+      title: "Childhood illnesses",
+      text: "Fever, cough, loose motions, ear pain and rashes. No antibiotics or cough syrups unless they are needed.",
     },
     {
       number: "04",
       title: "Nutrition",
-      text: "Practical guidance around healthy eating, nutrition and age-appropriate dietary needs.",
+      text: "Starting solids at six months, iron rich home food, fussy eating and slow weight gain.",
     },
     {
       number: "05",
       title: "Vaccination",
-      text: "Guidance on routine childhood immunisation and keeping vaccinations on schedule.",
+      text: "The IAP schedule, given in the same visit. Missed doses are worked out from the record you bring.",
     },
     {
       number: "06",
-      title: "Adolescent Care",
-      text: "Support for the changing health and developmental needs of growing children and adolescents.",
+      title: "Adolescent care",
+      text: "Growth, puberty, periods, acne, weight and school stress, with time to talk to the child directly.",
     },
   ];
 
@@ -41,30 +41,32 @@ const PediatricCare = () => {
     {
       age: "01",
       stage: "Newborn",
-      description: "Early care, feeding, growth and parental guidance.",
+      to: "/newborn-care",
+      description: "Feeding, sleep, cord care and jaundice in the first six weeks.",
     },
     {
       age: "02",
       stage: "Infancy",
-      description:
-        "Growth monitoring, nutrition, development and immunisation.",
+      to: "/vaccination-guide",
+      description: "Vaccines at 6, 10 and 14 weeks, then 6 and 9 months.",
     },
     {
       age: "03",
-      stage: "Early Childhood",
-      description: "Development, nutrition, illnesses and preventive care.",
+      stage: "Early childhood",
+      to: "/growth-development",
+      description: "Walking, talking and growing along the growth chart.",
     },
     {
       age: "04",
-      stage: "School Age",
-      description:
-        "Healthy growth, immunity, nutrition and common childhood concerns.",
+      stage: "School age",
+      to: "/child-nutrition",
+      description: "Eating well, fussy eating, iron and the common infections.",
     },
     {
       age: "05",
       stage: "Adolescence",
-      description:
-        "Health support through the physical and developmental changes of adolescence.",
+      to: "/appointment",
+      description: "Puberty, growth, weight and school stress. Book a visit to talk it through.",
     },
   ];
 
@@ -81,9 +83,9 @@ const PediatricCare = () => {
             </h1>
 
             <p className="pediatric-care-hero-description">
-              Thoughtful pediatric care focused on your child's health,
-              development and wellbeing, with parents kept informed at every
-              step.
+              Dr. Amreen sees children from the first week of life to the
+              teenage years, Monday to Saturday, 3 to 9 pm, at Caspian
+              Healthcare, Vijaynagar Colony.
             </p>
 
             <div className="pediatric-care-hero-actions">
@@ -93,7 +95,7 @@ const PediatricCare = () => {
                 rel="noopener noreferrer"
                 className="pediatric-care-primary-button"
               >
-                Book Appointment
+                Book a visit
                 <span>→</span>
               </a>
 
@@ -101,7 +103,7 @@ const PediatricCare = () => {
                 href="#pediatric-care-areas"
                 className="pediatric-care-secondary-button"
               >
-                Explore Care
+                What she treats
                 <span>↓</span>
               </a>
             </div>
@@ -120,14 +122,17 @@ const PediatricCare = () => {
             </div>
 
             <div className="pediatric-care-hero-image-small">
-              <img
-                src="/assets/images/clinic/clinic-team.jpg"
-                alt="The team at Caspian Healthcare, Hyderabad"
-                width="1200"
-                height="807"
-                loading="lazy"
-                decoding="async"
-              />
+              <figure className="fill-photo">
+                <img
+                  src="/assets/images/guides/mother-toddler.webp"
+                  alt="A mother laughing with her toddler"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption className="fill-photo-cap">Illustrative image</figcaption>
+              </figure>
             </div>
 
             <div className="pediatric-care-hero-note">
@@ -205,8 +210,6 @@ const PediatricCare = () => {
                   {area.number}
                 </span>
 
-                <div className="pediatric-care-area-icon">+</div>
-
                 <h3>{area.title}</h3>
 
                 <p>{area.text}</p>
@@ -244,7 +247,11 @@ const PediatricCare = () => {
 
             <div className="pediatric-care-stages-list">
               {pediatricCareStages.map((stage) => (
-                <div className="pediatric-care-stage" key={stage.age}>
+                <NavLink
+                  to={stage.to}
+                  className="pediatric-care-stage pediatric-care-stage-link"
+                  key={stage.age}
+                >
                   <span className="pediatric-care-stage-number">
                     {stage.age}
                   </span>
@@ -254,8 +261,8 @@ const PediatricCare = () => {
                     <p>{stage.description}</p>
                   </div>
 
-                  <span className="pediatric-care-stage-arrow">↗</span>
-                </div>
+                  <span className="pediatric-care-stage-arrow" aria-hidden="true">→</span>
+                </NavLink>
               ))}
             </div>
           </div>
@@ -277,7 +284,7 @@ const PediatricCare = () => {
 
           <div className="pediatric-care-prevention-layout">
             <div className="pediatric-care-prevention-image">
-              <figure className="fill-photo"><img src="/assets/images/guides/vaccination-guide.webp" alt="A pediatrician with a baby and mother" loading="lazy" decoding="async" /><figcaption className="fill-photo-cap">Illustrative image</figcaption></figure>
+              <figure className="fill-photo"><img src="/assets/images/guides/vaccination-guide.webp" alt="A mother holding her baby" loading="lazy" decoding="async" /><figcaption className="fill-photo-cap">Illustrative image</figcaption></figure>
             </div>
 
             <div className="pediatric-care-prevention-list">
@@ -356,7 +363,7 @@ const PediatricCare = () => {
               rel="noopener noreferrer"
               className="pediatric-care-cta-button"
             >
-              Book an Appointment
+              Book a visit
               <span>→</span>
             </a>
           </div>

@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import DateEcho from "./DateEcho";
 import { parseDob } from "../../data/vaccines";
 import { BOOKING_URL } from "../../data/site";
 import "../../styles/Milestones.css";
@@ -159,6 +160,7 @@ export default function MilestoneChecker() {
         <label>
           Child's date of birth
           <input type="date" value={dobText} onChange={(e) => { setDobText(e.target.value); }} />
+          <DateEcho value={dobText} />
         </label>
         <label>
           Born early?

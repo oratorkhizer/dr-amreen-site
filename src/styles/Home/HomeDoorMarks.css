@@ -366,3 +366,20 @@
   .dfm.dfm-flat .dfm-frame { padding: 0 13%; width: 100%; }
   .dfm.dfm-flat .dfm-caption { bottom: 8px; }
 }
+
+/* Audit 3 Nov 2026: the pinned scroll took about six phone screens before
+   the rest of the home page. Shorter now; the marks advance faster. The
+   scroll hint sat on top of the "Illustrative image" label on phones, and
+   the Skip pill was too small to tap comfortably. */
+.dfm { height: 320vh; }
+.dfm-skip { min-height: 40px; display: inline-flex; align-items: center; }
+
+@media (max-width: 760px) {
+  .dfm { height: 330vh; }
+  .dfm-hint { bottom: 310px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dfm { height: auto; }
+}
+.dfm.dfm-flat { height: auto; }

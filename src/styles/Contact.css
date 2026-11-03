@@ -583,3 +583,7 @@
     height: 42px;
   }
 }
+/* Audit 3 Nov 2026: breathing room between the Book button and its note. */
+html body .contact-note {
+  margin-top: 16px;
+}

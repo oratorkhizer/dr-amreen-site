@@ -63,6 +63,7 @@ export const VISITS = [
       "Rotavirus, dose 3",
       "Pneumococcal (PCV), dose 3",
     ],
+    note: "Rotavirus dose 3 depends on the brand used; some brands need only two doses.",
   },
   {
     key: "m6",

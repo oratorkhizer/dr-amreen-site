@@ -118,12 +118,6 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="contact-hero-line">
-            <span className="contact-hero-line-number">01</span>
-            <span className="contact-hero-line-text">
-              Pediatric Care · Hyderabad
-            </span>
-          </div>
         </div>
       </section>
 
@@ -248,7 +242,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="contact-appointment"
               >
-                <span>Book an Appointment</span>
+                <span>Book a visit</span>
                 <span aria-hidden="true">↗</span>
               </a>
 
@@ -446,7 +440,7 @@ const Contact = () => {
               rel="noopener noreferrer"
               className="contact-bottom-button"
             >
-              <span>Book an Appointment</span>
+              <span>Book a visit</span>
               <span aria-hidden="true">↗</span>
             </a>
           </div>

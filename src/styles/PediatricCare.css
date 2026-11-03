@@ -885,3 +885,16 @@
     width: 100%;
   }
 }
+/* Audit 3 Nov 2026: each age row now links to its guide. */
+.pediatric-care-stage-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pediatric-care-stage-link:hover .pediatric-care-stage-arrow {
+  transform: translateX(4px);
+}
+
+.pediatric-care-stage-arrow {
+  transition: transform 0.2s ease;
+}

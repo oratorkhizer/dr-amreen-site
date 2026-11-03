@@ -725,3 +725,27 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* Audit 3 Nov 2026 */
+.about-next-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-next-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 900px) {
+  .about-next-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* The floating header covered the first line of the hero on phones. */
+@media (max-width: 700px) {
+  html body .about-hero {
+    padding-top: 116px;
+  }
+}

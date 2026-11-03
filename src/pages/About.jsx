@@ -12,14 +12,14 @@ const About = () => {
             <span className="about-eyebrow">About Dr. Amreen</span>
 
             <h1 className="about-hero-title">
-              Caring for children with
-              <span> knowledge, patience & heart.</span>
+              A children's doctor
+              <span> who is a mother too.</span>
             </h1>
 
             <p className="about-hero-description">
-              A warm and child-focused approach to pediatric care, helping
-              children grow healthy while giving parents confidence and peace of
-              mind.
+              Gold medallist from Niloufer Hospital, author of {BOOK.title},
+              and a mother of three. She sees children from the first week of
+              life to the teenage years at {CLINIC.name}, Hyderabad.
             </p>
 
             <div className="about-hero-actions">
@@ -29,7 +29,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="about-primary-button"
               >
-                Book an Appointment
+                Book a visit
                 <span>→</span>
               </a>
 
@@ -59,8 +59,6 @@ const About = () => {
               </div>
             </div>
 
-            <span className="about-decoration about-decoration-one"></span>
-            <span className="about-decoration about-decoration-two"></span>
           </div>
         </div>
       </section>
@@ -77,26 +75,29 @@ const About = () => {
               <span className="about-eyebrow">A pediatrician who listens</span>
 
               <h2 className="about-section-title">
-                Making every visit feel
-                <span> a little easier.</span>
+                Trained at Niloufer,
+                <span> taught by three children.</span>
               </h2>
 
               <p>
-                Dr. Amreen is dedicated to providing thoughtful, compassionate
-                pediatric care in an environment where children feel comfortable
-                and parents feel heard.
+                Dr. Amreen did her MD in Pediatrics at Niloufer Hospital,
+                Hyderabad's government hospital for women and children, and
+                finished as a gold medallist. Her MBBS is from Gandhi Medical
+                College.
               </p>
 
               <p>
-                Every child is different. Her approach focuses on understanding
-                each child's individual needs while keeping parents informed
-                throughout their child's care.
+                Raising three children of her own taught her the rest: what
+                parents actually worry about at home, and how much a clear
+                answer helps. That is why her advice is practical,
+                and why she takes time to explain.
               </p>
 
               <p>
-                From routine consultations to childhood illnesses, nutrition,
-                development and preventive care, the goal is simple: to support
-                children and their families at every stage of childhood.
+                She writes for parents too. Her book {BOOK.title} is for
+                mothers in the first months after birth, and her short videos on
+                Instagram answer the questions that come up at home. She
+                consults in English, Hindi, Urdu and Telugu.
               </p>
             </div>
           </div>
@@ -121,14 +122,13 @@ const About = () => {
               <span className="about-eyebrow">The approach</span>
 
               <h2 className="about-section-title">
-                Care that begins with
-                <span> understanding.</span>
+                What a visit
+                <span> with her is like.</span>
               </h2>
 
               <p>
-                Pediatric care is about more than treating an illness. It is
-                about understanding the child, listening to the family and
-                creating a comfortable experience for everyone.
+                She examines the child properly, tells you what she found, and
+                tells you what to watch for at home.
               </p>
 
               <div className="about-values">
@@ -137,8 +137,8 @@ const About = () => {
                   <div>
                     <h3>Listen</h3>
                     <p>
-                      Taking time to understand parents' concerns and children's
-                      needs.
+                      Your questions first. Bring them written down; there
+                      are no silly ones.
                     </p>
                   </div>
                 </div>
@@ -148,8 +148,8 @@ const About = () => {
                   <div>
                     <h3>Explain</h3>
                     <p>
-                      Making medical information easier for families to
-                      understand.
+                      What is wrong, what is not, and what the treatment is
+                      for, in plain words.
                     </p>
                   </div>
                 </div>
@@ -157,9 +157,10 @@ const About = () => {
                 <div className="about-value">
                   <span className="about-value-number">03</span>
                   <div>
-                    <h3>Care</h3>
+                    <h3>Follow up</h3>
                     <p>
-                      Providing thoughtful and compassionate pediatric care.
+                      Growth plotted and vaccines tracked, so nothing is missed
+                      at the next visit.
                     </p>
                   </div>
                 </div>
@@ -173,71 +174,33 @@ const About = () => {
         <div className="about-container">
           <div className="about-expertise-header">
             <div>
-              <span className="about-eyebrow">Areas of care</span>
+              <span className="about-eyebrow">Where to next</span>
 
               <h2 className="about-section-title">
-                Supporting children through
-                <span> every stage.</span>
+                More from
+                <span> Dr. Amreen.</span>
               </h2>
             </div>
-
-            <p>
-              From infancy through childhood, pediatric care covers many
-              different stages of growth and development.
-            </p>
           </div>
 
-          <div className="about-expertise-grid">
-            <article className="about-expertise-card">
+          <div className="about-expertise-grid about-next-grid">
+            <NavLink to="/pediatric-care" className="about-expertise-card about-next-card">
               <span>01</span>
-              <h3>Newborn Care</h3>
-              <p>
-                Guidance and support during the important first weeks of a
-                baby's life.
-              </p>
-            </article>
+              <h3>What she treats</h3>
+              <p>Newborns, growth, vaccines, illnesses and adolescent health.</p>
+            </NavLink>
 
-            <article className="about-expertise-card">
+            <NavLink to="/child-health" className="about-expertise-card about-next-card">
               <span>02</span>
-              <h3>Child Health</h3>
-              <p>
-                Supporting children's health through regular consultations and
-                preventive care.
-              </p>
-            </article>
+              <h3>Guides for parents</h3>
+              <p>Newborn care, vaccine dates, growth charts, feeding and illnesses.</p>
+            </NavLink>
 
-            <article className="about-expertise-card">
+            <NavLink to="/new-mothers" className="about-expertise-card about-next-card">
               <span>03</span>
-              <h3>Nutrition</h3>
-              <p>
-                Helping parents understand healthy nutrition and eating habits
-                during childhood.
-              </p>
-            </article>
-
-            <article className="about-expertise-card">
-              <span>04</span>
-              <h3>Growth & Development</h3>
-              <p>
-                Monitoring important milestones and supporting healthy
-                development.
-              </p>
-            </article>
-
-            <article className="about-expertise-card">
-              <span>05</span>
-              <h3>Vaccination</h3>
-              <p>
-                Helping families understand childhood immunisation and
-                vaccination schedules.
-              </p>
-            </article>
-
-            <article className="about-expertise-card">
-              <span>06</span>
-              <h3>Childhood Illnesses</h3>
-              <p>Assessment and care for common childhood health concerns.</p>
-            </article>
+              <h3>For new mothers</h3>
+              <p>Meet your baby's doctor before the birth, and read about her book.</p>
+            </NavLink>
           </div>
         </div>
       </section>
@@ -249,8 +212,8 @@ const About = () => {
               <span className="about-eyebrow">Professional profile</span>
 
               <h2 className="about-section-title">
-                Experience you can
-                <span> feel confident in.</span>
+                Training and
+                <span> registration.</span>
               </h2>
 
               <p>
@@ -315,13 +278,13 @@ const About = () => {
             <span className="about-eyebrow">Your child's health matters</span>
 
             <h2>
-              Looking for thoughtful care
-              <span> for your child?</span>
+              Book a visit
+              <span> with Dr. Amreen.</span>
             </h2>
 
             <p>
-              Book a consultation and take the next step towards understanding
-              your child's health and wellbeing.
+              {OPD.days}, {OPD.hours}, at {CLINIC.name}, Vijaynagar Colony.
+              Consultation Rs {DOCTOR.consultationFee}.
             </p>
 
             <a
@@ -330,7 +293,7 @@ const About = () => {
               rel="noopener noreferrer"
               className="about-cta-button"
             >
-              Book an Appointment
+              Book a visit
               <span>→</span>
             </a>
           </div>

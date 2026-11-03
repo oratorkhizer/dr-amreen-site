@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import DateEcho from "./DateEcho";
 import { WHO, IAP, IAP_Z } from "../../data/growth";
 import { DOCTOR } from "../../data/site";
 import "../../styles/Growth.css";
@@ -266,7 +267,7 @@ export default function GrowthCalculator() {
       <div ref={mountRef} className="growth-reader" style={{ "--primary": "var(--color-primary)", "--navy": "var(--color-heading)", "--muted": "var(--color-text)", "--line": "#cfe6e3", "--tint": "var(--color-primary-soft)", "--ink": "var(--color-text)" }} />
 
       <div className="growth-form">
-        <label><span>Date of birth</span><input id="gc-dob" type="date" value={dob} onChange={(e) => setDob(e.target.value)} max={date} /></label>
+        <label><span>Date of birth</span><input id="gc-dob" type="date" value={dob} onChange={(e) => setDob(e.target.value)} max={date} /><DateEcho value={dob} /></label>
         <label><span>Date measured</span><input id="gc-date" type="date" value={date} onChange={(e) => setDate(e.target.value)} /></label>
         <label><span>Sex</span>
           <select id="gc-sex" value={sex} onChange={(e) => setSex(e.target.value)}>

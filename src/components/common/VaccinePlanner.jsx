@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import DateEcho from "./DateEcho";
 import {
   planFor,
   parseDob,
@@ -237,6 +238,7 @@ export default function VaccinePlanner() {
               setSendState("idle");
             }}
           />
+          <DateEcho value={dobText} />
         </label>
         <label>
           Child's first name <small>(optional)</small>

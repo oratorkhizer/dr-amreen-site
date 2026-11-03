@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import ReelCard from "../components/common/ReelCard";
+import { ARTICLES } from "../data/articles";
 import {
   BOOK,
   BOOKING_URL,
@@ -57,7 +58,8 @@ const NewMothers = () => {
   return (
     <main className="article-page new-mothers" id="main-content">
       <section className="article-hero">
-        <div className="article-container">
+        <div className="article-container article-hero-grid">
+          <div>
           <nav className="article-breadcrumb" aria-label="Breadcrumb">
             <NavLink to="/">Home</NavLink>
             <span aria-hidden="true">›</span>
@@ -86,6 +88,18 @@ const NewMothers = () => {
               A normal consultation, Rs {DOCTOR.consultationFee}. {OPD.days}, {OPD.hours}.
             </span>
           </div>
+          </div>
+
+          <figure className="article-hero-photo">
+            <img
+              src="/assets/images/guides/new-mothers.webp"
+              alt=""
+              width="1200"
+              height="800"
+              fetchPriority="high"
+            />
+            <figcaption>Illustrative image</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -178,11 +192,37 @@ const NewMothers = () => {
         </div>
       </section>
 
+      <section className="new-mothers-section new-mothers-close">
+        <div className="article-container new-mothers-close-inner">
+          <div>
+            <h2 className="new-mothers-heading">See {DOCTOR.shortName} before the birth</h2>
+            <p className="new-mothers-lead">
+              {CLINIC.name}, {CLINIC.addressLine2}, {CLINIC.city}. {OPD.days},{" "}
+              {OPD.hours}. Consultation Rs {DOCTOR.consultationFee}.
+            </p>
+          </div>
+          <a className="new-mothers-button" href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+            Book a visit <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <nav className="article-container new-mothers-more" aria-label="More for parents">
+          <span>More for parents:</span>
+          {Object.entries(ARTICLES).map(([key, item]) => (
+            <NavLink key={key} to={`/${key}`}>{item.title}</NavLink>
+          ))}
+        </nav>
+      </section>
+
       <section className="article-disclaimer">
         <div className="article-container">
           <p>
             This page is general guidance for parents. It does not replace a
             consultation. If you are worried about your baby, please bring them in.
+          </p>
+          <p className="article-reviewed">
+            Medically reviewed by <NavLink to="/about">{DOCTOR.name}</NavLink>,{" "}
+            {DOCTOR.speciality}, {DOCTOR.qualifications}.{" "}
+            {DOCTOR.registrationCouncil} {DOCTOR.registration}.
           </p>
         </div>
       </section>

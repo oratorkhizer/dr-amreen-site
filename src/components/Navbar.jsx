@@ -141,7 +141,7 @@ const Navbar = () => {
             </svg>
           </span>
 
-          <span className="navbar-appointment-text">Book Appointment</span>
+          <span className="navbar-appointment-text">Book a visit</span>
 
           <span className="navbar-appointment-arrow">→</span>
         </a>
@@ -200,7 +200,7 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span>Book an Appointment</span>
+            <span>Book a visit</span>
 
             <span className="navbar-mobile-appointment-arrow">→</span>
           </a>

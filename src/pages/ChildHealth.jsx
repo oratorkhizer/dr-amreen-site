@@ -4,36 +4,44 @@ import { NavLink } from "react-router-dom";
 import "../styles/ChildHealth.css";
 
 const ChildHealth = () => {
+  // Each card is a real link to a guide on this site (audit 3 Nov 2026:
+  // the old cards repeated the Pediatric Care page and led nowhere).
   const childHealthTopics = [
     {
       number: "01",
-      title: "Newborn & Infant Care",
-      text: "The first months of life bring many questions for parents. Regular pediatric care helps monitor feeding, growth, sleep, development and overall wellbeing while giving parents the guidance they need.",
+      title: "Newborn care",
+      to: "/newborn-care",
+      text: "Feeding, sleep, cord care and jaundice in the first six weeks, and the signs that need a doctor.",
     },
     {
       number: "02",
-      title: "Growth & Development",
-      text: "Every child develops at their own pace. Monitoring physical growth, communication, learning, movement and social development helps identify concerns early and supports healthy childhood development.",
+      title: "Vaccine dates",
+      to: "/vaccination-guide",
+      text: "The IAP schedule, and every due date for your child worked out from the date of birth.",
     },
     {
       number: "03",
-      title: "Nutrition & Healthy Growth",
-      text: "Good nutrition plays an important role in childhood growth. Age-appropriate meals, balanced nutrition and healthy eating habits help children build a strong foundation for their future health.",
+      title: "Growth and milestones",
+      to: "/growth-development",
+      text: "Plot weight, height and head size on the growth charts, and check milestones for your child's age.",
     },
     {
       number: "04",
-      title: "Vaccination & Prevention",
-      text: "Vaccination is an important part of preventive pediatric care. Keeping immunisations up to date helps protect children from a range of vaccine-preventable infections.",
+      title: "Feeding by age",
+      to: "/child-nutrition",
+      text: "Breast milk, starting solids at six months, iron rich food and what to do with a fussy eater.",
     },
     {
       number: "05",
-      title: "Common Childhood Illnesses",
-      text: "Fever, cough, cold, infections and digestive complaints are common reasons children may need medical attention. Understanding symptoms and knowing when to seek professional advice can help parents respond confidently.",
+      title: "Common illnesses",
+      to: "/childhood-illnesses",
+      text: "Fever, cough, loose motions and rashes: what settles at home and what needs to be seen.",
     },
     {
       number: "06",
-      title: "School-Age Health",
-      text: "As children grow, their healthcare needs change. Sleep, nutrition, physical activity, learning, emotional wellbeing and regular health assessments all contribute to a healthy school-age childhood.",
+      title: "For new mothers",
+      to: "/new-mothers",
+      text: "Meet your baby's doctor before the birth, with a checklist for the first six weeks.",
     },
   ];
 
@@ -50,9 +58,9 @@ const ChildHealth = () => {
             </h1>
 
             <p className="child-health-hero-description">
-              Children's health is about much more than treating illness.
-              Healthy growth, nutrition, development, prevention and emotional
-              wellbeing all play an important role in helping children thrive.
+              Short guides written by Dr. Amreen for the questions parents ask
+              most: newborn care, vaccines, growth, feeding and common
+              illnesses. Each one says plainly what can wait and what cannot.
             </p>
 
             <div className="child-health-hero-actions">
@@ -62,12 +70,12 @@ const ChildHealth = () => {
                 rel="noopener noreferrer"
                 className="child-health-hero-button"
               >
-                <span>Book an Appointment</span>
+                <span>Book a visit</span>
                 <span>↗</span>
               </a>
 
               <a href="#child-health-topics" className="child-health-hero-link">
-                Explore child health
+                See the guides
                 <span>↓</span>
               </a>
             </div>
@@ -75,14 +83,17 @@ const ChildHealth = () => {
 
           <div className="child-health-hero-visual">
             <div className="child-health-hero-image-main">
-              <img
-                src="/assets/images/clinic/clinic-team.jpg"
-                alt="The team at Caspian Healthcare in the children’s consulting room, Hyderabad"
-                width="1200"
-                height="807"
-                loading="lazy"
-                decoding="async"
-              />
+              <figure className="fill-photo">
+                <img
+                  src="/assets/images/guides/child-smiling.webp"
+                  alt="A young girl laughing outdoors"
+                  width="1200"
+                  height="800"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+                <figcaption className="fill-photo-cap">Illustrative image</figcaption>
+              </figure>
             </div>
 
             <div className="child-health-hero-note">
@@ -108,8 +119,8 @@ const ChildHealth = () => {
 
           <div className="child-health-intro-content">
             <h2>
-              Little changes can tell us
-              <span>a lot about a child's wellbeing.</span>
+              Small changes
+              <span>can tell us a lot.</span>
             </h2>
 
             <div className="child-health-intro-text">
@@ -145,30 +156,33 @@ const ChildHealth = () => {
               </span>
 
               <h2>
-                Areas that matter
-                <span>through childhood.</span>
+                Guides for parents,
+                <span>by age and by worry.</span>
               </h2>
             </div>
 
             <p>
-              From the early days of infancy to the school years, children's
-              health involves many connected areas. Understanding these areas
-              can help parents make informed decisions about everyday care.
+              Each guide is written in plain words and reviewed by Dr. Amreen.
+              The vaccine and growth pages have tools you can use at home.
             </p>
           </div>
 
           <div className="child-health-topics-grid">
             {childHealthTopics.map((topic) => (
-              <article className="child-health-topic-card" key={topic.number}>
+              <NavLink
+                to={topic.to}
+                className="child-health-topic-card child-health-topic-link"
+                key={topic.number}
+              >
                 <div className="child-health-topic-card-top">
                   <span>{topic.number}</span>
-                  <span>+</span>
+                  <span aria-hidden="true">→</span>
                 </div>
 
                 <h3>{topic.title}</h3>
 
                 <p>{topic.text}</p>
-              </article>
+              </NavLink>
             ))}
           </div>
         </div>
@@ -178,7 +192,7 @@ const ChildHealth = () => {
         <div className="child-health-container">
           <div className="child-health-feature-layout">
             <div className="child-health-feature-image">
-              <figure className="fill-photo"><img src="/assets/images/guides/childhood-illnesses.webp" alt="A young child resting with a soft toy" loading="lazy" decoding="async" /><figcaption className="fill-photo-cap">Illustrative image</figcaption></figure>
+              <figure className="fill-photo"><img src="/assets/images/guides/childhood-illnesses.webp" alt="A mother sitting with her young child" loading="lazy" decoding="async" /><figcaption className="fill-photo-cap">Illustrative image</figcaption></figure>
 
               <div className="child-health-feature-image-caption">
                 <span>Growing well</span>
@@ -242,15 +256,14 @@ const ChildHealth = () => {
               </span>
 
               <h2>
-                Because every
-                <span>child is different.</span>
+                Still not sure?
+                <span>Bring your child in.</span>
               </h2>
 
               <p>
-                Good pediatric care considers the individual child, their stage
-                of development and the concerns of their family. Professional
-                guidance can help parents feel more confident about the
-                decisions they make for their child's health.
+                A guide cannot examine your child. If something worries you,
+                book a visit with Dr. Amreen, Monday to Saturday, 3 to 9 pm,
+                at Caspian Healthcare, Vijaynagar Colony.
               </p>
 
               <a
@@ -259,7 +272,7 @@ const ChildHealth = () => {
                 rel="noopener noreferrer"
                 className="child-health-parent-button"
               >
-                <span>Book an Appointment</span>
+                <span>Book a visit</span>
                 <span>↗</span>
               </a>
             </div>

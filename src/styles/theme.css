@@ -194,7 +194,12 @@ body *:not(input):not(select):not(textarea) {
     background: var(--color-primary);
     color: #fff;
   }
-  body { padding-bottom: 84px; }
+  /* The space kept for the phone bar takes the footer's colour, so it does
+     not show as a second band under the footer (audit 3 Nov 2026). */
+  body { padding-bottom: 0; }
+  html body .site-footer { padding-bottom: calc(32px + 84px); }
+  /* Guide heroes: keep the photo caption clear of the phone bar. */
+  html body .article-hero { padding-bottom: 96px; }
 }
 
 /* ---------- Guide pages: light hero with an illustrative photo ---------- */
@@ -300,3 +305,37 @@ body *:not(input):not(select):not(textarea) {
   color: var(--color-muted);
 }
 .child-health-feature-image-caption { display: none !important; }
+
+/* ---- Audit 3 Nov 2026 ---------------------------------------------- */
+
+/* Eyebrow labels on the two dark purple bands were dark green on purple and
+   almost unreadable. The theme rule above forces the colour with !important,
+   so these need it too. */
+html body .pediatric-care-stages [class*="eyebrow"],
+html body .about-credentials [class*="eyebrow"] {
+  color: rgba(255, 255, 255, 0.86) !important;
+}
+
+/* No single word left alone on the last line of a heading. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Photo captions sit in the corner with the smaller radius on these shapes. */
+.pediatric-care-stages-visual .fill-photo-cap,
+.pediatric-care-prevention-image .fill-photo-cap,
+.pediatric-care-cta-image .fill-photo-cap {
+  left: 18px;
+  bottom: 18px;
+}
+
+.date-echo {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+.hm-vax-row .date-echo { flex-basis: 100%; }
