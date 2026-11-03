@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { OPD, BOOKING_URL } from "../../data/site";
+import { installSigTrack, sig } from "../../lib/sigTrack";
 import "../../styles/Home/HomeDoorMarks.css";
 
 // The home page opening: height marks on a painted door frame. As the parent
@@ -60,8 +61,28 @@ const MARKS = [
 
 // Scroll story, as fractions of the pinned section. Mark i is fully drawn
 // and centred at AT[i].
-const AT = [0.13, 0.29, 0.45, 0.61, 0.77];
-const OUTRO = [0.84, 0.92];
+// Nov 2026: section is 320vh (330vh on phones). Every beat, the intro and
+// the closing card each stay on screen for at least 9% of the scroll.
+const AT = [0.15, 0.3, 0.45, 0.6, 0.75];
+const OUTRO = [0.83, 0.91];
+const SEEN_KEY = "sig-seen-amreen";
+
+function readSeen() {
+  try {
+    if (/[?&]replay=1(&|$)/.test(window.location.search)) return false;
+    return window.localStorage.getItem(SEEN_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+function writeSeen(on) {
+  try {
+    if (on) window.localStorage.setItem(SEEN_KEY, "1");
+    else window.localStorage.removeItem(SEEN_KEY);
+  } catch {
+    /* storage blocked: the moment simply plays again next time */
+  }
+}
 
 const clamp = (x, a, b) => (x < a ? a : x > b ? b : x);
 const seg = (p, a, b) => clamp((p - a) / (b - a), 0, 1);
@@ -97,15 +118,43 @@ const HomeDoorMarks = () => {
   const marks = useRef([]);
   const panels = useRef([]);
   const dots = useRef(null);
+  const replayRef = useRef(null);
+  const skipped = useRef(false);
 
   useEffect(() => {
     const el = root.current;
     const reduce =
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    installSigTrack();
+
+    // Analytics: "view" when the moment first comes on screen, "cta" for
+    // any link inside it (Skip and Replay have their own events).
+    let io = null;
+    if ("IntersectionObserver" in window) {
+      io = new IntersectionObserver((entries) => {
+        if (entries.some((x) => x.isIntersecting)) {
+          sig("view");
+          io.disconnect();
+        }
+      });
+      io.observe(el);
+    }
+    const onClick = (e) => {
+      const t = e.target.closest && e.target.closest("a, button");
+      if (!t || !el.contains(t)) return;
+      if (t.classList.contains("dfm-skip") || t.classList.contains("dfm-replay")) return;
+      const href = (t.getAttribute("href") || "").split("?")[0];
+      sig("cta", { label: (t.textContent || "").replace(/\s+/g, " ").replace("\u2192", "").trim().slice(0, 40), href }, true);
+    };
+    el.addEventListener("click", onClick);
+
     if (reduce) {
       el.classList.add("dfm-flat");
-      return undefined;
+      return () => {
+        el.removeEventListener("click", onClick);
+        if (io) io.disconnect();
+      };
     }
     el.classList.add("dfm-live");
 
@@ -118,15 +167,37 @@ const HomeDoorMarks = () => {
     let last = -1;
     let shown = -2;
     let done = false;
+    // Return visit: show the end state as one normal screen, no pinned scroll.
+    let seen = readSeen();
+    const applySeen = () => {
+      el.classList.toggle("dfm-seen", seen);
+      last = -1;
+      shown = -2;
+    };
+    applySeen();
+    if (seen) sig("seen_return");
 
     const frame = () => {
       ticking = false;
       const st = stage.current;
       if (!st || !world.current || !strip.current) return;
       const total = el.offsetHeight - st.offsetHeight;
-      const p = clamp(-el.getBoundingClientRect().top / total, 0, 1);
+      const p = seen
+        ? 1
+        : total > 0
+          ? clamp(-el.getBoundingClientRect().top / total, 0, 1)
+          : 0;
       if (Math.abs(p - last) < 0.0004) return;
       last = p;
+      // A Skip jump passes the whole moment: do not count it as watched.
+      if (!seen && !skipped.current) {
+        if (p > 0.03) sig("start");
+        if (p >= 0.5) sig("half");
+        if (p >= 0.97) {
+          sig("complete");
+          writeSeen(true);
+        }
+      }
 
       // The photo window: the current mark sits a little below its middle.
       const winH = world.current.parentElement.offsetHeight;
@@ -173,7 +244,7 @@ const HomeDoorMarks = () => {
         [...dots.current.children].forEach((d, i) => {
           d.classList.toggle("on", a >= i);
         });
-        if (a === MARKS.length && !done) {
+        if (a === MARKS.length && !done && !seen) {
           done = true;
           if (window.va) window.va("event", { name: "door_marks_finished" });
         }
@@ -192,6 +263,16 @@ const HomeDoorMarks = () => {
       last = -1;
       onScroll();
     };
+    replayRef.current = () => {
+      writeSeen(false);
+      seen = false;
+      skipped.current = false;
+      applySeen();
+      sig("replay", null, true);
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top, behavior: "instant" });
+      frame();
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
     const img = strip.current.querySelector("img");
@@ -201,6 +282,9 @@ const HomeDoorMarks = () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       if (img) img.removeEventListener("load", onResize);
+      el.removeEventListener("click", onClick);
+      if (io) io.disconnect();
+      replayRef.current = null;
     };
   }, []);
 
@@ -208,6 +292,9 @@ const HomeDoorMarks = () => {
     const next = document.getElementById("after-door-marks");
     if (!next) return;
     e.preventDefault();
+    writeSeen(true);
+    skipped.current = true;
+    sig("skip");
     const top = next.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({ top, behavior: "instant" });
   };
@@ -217,15 +304,23 @@ const HomeDoorMarks = () => {
       <section
         className="dfm"
         ref={root}
-        aria-labelledby="dfm-title"
+        aria-label="Height marks on the door frame: what each age brings"
       >
         <div className="dfm-stage" ref={stage}>
           <a className="dfm-skip" href="#after-door-marks" onClick={skip}>
             Skip
           </a>
 
+          <button
+            type="button"
+            className="dfm-replay"
+            onClick={() => replayRef.current && replayRef.current()}
+          >
+            <span aria-hidden="true">↺</span> Replay
+          </button>
+
           <div className="dfm-frame">
-            <div className="dfm-window">
+            <div className="dfm-window" aria-hidden="true">
               <div className="dfm-world" ref={world}>
                 <div className="dfm-strip" ref={strip}>
                   <img

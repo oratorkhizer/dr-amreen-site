@@ -383,3 +383,52 @@
   .dfm { height: auto; }
 }
 .dfm.dfm-flat { height: auto; }
+
+/* Moment v2 (Nov 2026): return visits, Replay, focus rings.
+   On a later visit (sig-seen-amreen set) the moment shows its end state as
+   one normal screen, with a Replay button that brings the scroll back. */
+.dfm-replay {
+  display: none;
+  position: absolute;
+  z-index: 6;
+  left: var(--container-padding);
+  top: calc(var(--dfm-hdr) + 14px);
+  min-height: 40px;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 15px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  cursor: pointer;
+}
+.dfm-replay:hover { color: var(--color-primary-dark); border-color: var(--color-primary); }
+.dfm-skip:focus-visible,
+.dfm-replay:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+  box-shadow: var(--focus-ring);
+}
+.dfm.dfm-seen { height: auto; }
+.dfm.dfm-seen .dfm-stage { position: relative; }
+.dfm.dfm-seen .dfm-skip,
+.dfm.dfm-seen .dfm-hint { display: none; }
+.dfm.dfm-seen .dfm-replay { display: inline-flex; }
+@media (max-width: 760px) {
+  .dfm-replay { left: 16px; top: calc(var(--dfm-hdr) + 8px); font-size: 12px; padding: 6px 13px; }
+}
+
+/* Phones: the fixed Book / Call / Directions bar (about 72px) covered the
+   bottom of the words, so the end card's third button and some "go" links
+   sat hidden under it. Keep that strip clear. */
+@media (max-width: 760px) {
+  .dfm.dfm-live .dfm-stage {
+    grid-template-rows: minmax(0, 1fr) 232px;
+    padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+  }
+  .dfm.dfm-live .dfm-hint { bottom: calc(364px + env(safe-area-inset-bottom, 0px)); }
+}
