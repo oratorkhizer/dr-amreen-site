@@ -75,6 +75,21 @@ function readSeen() {
     return false;
   }
 }
+// Keep "#after-door-marks" out of the address bar, so a reload does not
+// jump past the hero (it can get there from a tap before the page is ready).
+function dropSkipHash() {
+  try {
+    if (window.location.hash === "#after-door-marks") {
+      window.history.replaceState(
+        window.history.state,
+        "",
+        window.location.pathname + window.location.search
+      );
+    }
+  } catch {
+    /* ignore */
+  }
+}
 function writeSeen(on) {
   try {
     if (on) window.localStorage.setItem(SEEN_KEY, "1");
@@ -127,6 +142,7 @@ const HomeDoorMarks = () => {
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     installSigTrack();
+    dropSkipHash();
 
     // Analytics: "view" when the moment first comes on screen, "cta" for
     // any link inside it (Skip and Replay have their own events).
@@ -297,6 +313,7 @@ const HomeDoorMarks = () => {
     sig("skip");
     const top = next.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({ top, behavior: "instant" });
+    dropSkipHash();
   };
 
   return (
