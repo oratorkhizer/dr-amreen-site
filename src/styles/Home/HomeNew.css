@@ -510,3 +510,10 @@
   .hm-hero-side { display: flex; flex-direction: column-reverse; gap: 22px; }
   .hm-portrait { width: min(250px, 70%); }
 }
+
+/* Reel cover (audit 3 Nov 2026). */
+.hm-reel-frame { position: relative; }
+.hm-reel-cover { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: var(--color-lavender-light, var(--color-primary-soft)); pointer-events: none; transition: opacity 0.3s ease; }
+.hm-reel-frame.is-ready .hm-reel-cover { opacity: 0; }
+.hm-reel-play { width: 60px; height: 60px; display: grid; place-items: center; border-radius: 50%; background: var(--color-primary-deep); color: #fff; font-size: 20px; padding-left: 4px; box-sizing: border-box; }
+.hm-reel-label { font-size: 14px; font-weight: 600; color: var(--color-heading); }

@@ -291,10 +291,10 @@ const PediatricCare = () => {
               <div className="pediatric-care-prevention-item">
                 <span>01</span>
                 <div>
-                  <h3>Routine Checkups</h3>
+                  <h3>Routine checks</h3>
                   <p>
-                    Regular assessment helps monitor your child's growth,
-                    development and general health.
+                    Weight, height and head size measured and plotted at every
+                    visit, so a slowing curve is caught early.
                   </p>
                 </div>
               </div>
@@ -304,8 +304,8 @@ const PediatricCare = () => {
                 <div>
                   <h3>Immunisation</h3>
                   <p>
-                    Staying up to date with recommended childhood vaccinations
-                    is an important part of preventive care.
+                    The IAP schedule, given in the clinic. Bring the
+                    vaccination card and missed doses are caught up.
                   </p>
                 </div>
               </div>
@@ -313,10 +313,10 @@ const PediatricCare = () => {
               <div className="pediatric-care-prevention-item">
                 <span>03</span>
                 <div>
-                  <h3>Nutrition Guidance</h3>
+                  <h3>Feeding</h3>
                   <p>
-                    Age-appropriate nutrition supports healthy growth,
-                    development and everyday wellbeing.
+                    Solids from six months, iron rich home food, and help with
+                    fussy eating and slow weight gain.
                   </p>
                 </div>
               </div>
@@ -324,10 +324,10 @@ const PediatricCare = () => {
               <div className="pediatric-care-prevention-item">
                 <span>04</span>
                 <div>
-                  <h3>Development Monitoring</h3>
+                  <h3>Milestones</h3>
                   <p>
-                    Understanding developmental milestones helps parents
-                    recognise their child's progress and concerns early.
+                    Sitting, walking, talking and play checked for age, and
+                    any gap looked at early.
                   </p>
                 </div>
               </div>
@@ -353,8 +353,8 @@ const PediatricCare = () => {
             </h2>
 
             <p>
-              If you have concerns about your child's health, growth,
-              development or wellbeing, schedule a consultation with Dr. Amreen.
+              Book a visit with Dr. Amreen, Monday to Saturday, 3 to 9 pm, at
+              Caspian Healthcare, Vijaynagar Colony. Consultation Rs 500.
             </p>
 
             <a

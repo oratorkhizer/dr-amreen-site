@@ -898,3 +898,10 @@
 .pediatric-care-stage-arrow {
   transition: transform 0.2s ease;
 }
+
+/* Audit 3 Nov 2026: the old "+" icon space is gone, so close the gap, and keep
+   the inset photo's caption inside its box. */
+html body .pediatric-care-area-card { min-height: 0; }
+html body .pediatric-care-area-card h3 { margin-top: 22px; }
+.pediatric-care-hero-image-small .fill-photo { min-height: 0; height: 100%; }
+.pediatric-care-hero-image-small .fill-photo-cap { left: 8px; bottom: 8px; font-size: 11px; }

@@ -52,10 +52,10 @@ const About = () => {
             </div>
 
             <div className="about-hero-badge">
-              <span className="about-hero-badge-number">01</span>
+              <span className="about-hero-badge-number">3</span>
               <div>
-                <strong>Dedicated to children</strong>
-                <span>Every child matters.</span>
+                <strong>Mother of three</strong>
+                <span>and author of {BOOK.title}.</span>
               </div>
             </div>
 
@@ -186,19 +186,19 @@ const About = () => {
           <div className="about-expertise-grid about-next-grid">
             <NavLink to="/pediatric-care" className="about-expertise-card about-next-card">
               <span>01</span>
-              <h3>What she treats</h3>
+              <h3>What she treats <span aria-hidden="true">→</span></h3>
               <p>Newborns, growth, vaccines, illnesses and adolescent health.</p>
             </NavLink>
 
             <NavLink to="/child-health" className="about-expertise-card about-next-card">
               <span>02</span>
-              <h3>Guides for parents</h3>
+              <h3>Guides for parents <span aria-hidden="true">→</span></h3>
               <p>Newborn care, vaccine dates, growth charts, feeding and illnesses.</p>
             </NavLink>
 
             <NavLink to="/new-mothers" className="about-expertise-card about-next-card">
               <span>03</span>
-              <h3>For new mothers</h3>
+              <h3>For new mothers <span aria-hidden="true">→</span></h3>
               <p>Meet your baby's doctor before the birth, and read about her book.</p>
             </NavLink>
           </div>

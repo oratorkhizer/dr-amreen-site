@@ -106,8 +106,8 @@ const Contact = () => {
             <span className="contact-eyebrow">Get in Touch</span>
 
             <h1 className="contact-title">
-              We're here when
-              <span>your child needs care.</span>
+              Find the clinic,
+              <span>or send us a note.</span>
             </h1>
 
             <p className="contact-intro">

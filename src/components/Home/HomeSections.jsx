@@ -165,24 +165,32 @@ export const HomeUrgent = () => (
 
 // Instagram's own player, loaded only once the section comes near the
 // screen, so the page stays light and the covers are her real frames.
-const ReelEmbed = ({ id, title, load }) => (
-  <figure className="hm-reel">
-    <div className="hm-reel-frame">
-      {load ? (
-        <iframe
-          src={`https://www.instagram.com/reel/${id}/embed/`}
-          title={title}
-          loading="lazy"
-          allow="encrypted-media; picture-in-picture"
-          allowFullScreen
-        />
-      ) : (
-        <span className="hm-reel-wait" aria-hidden="true" />
-      )}
-    </div>
-    <figcaption>{title}</figcaption>
-  </figure>
-);
+// Until Instagram has drawn the video, a play mark and a label sit on top,
+// so the card never shows as an empty box (audit 3 Nov 2026).
+const ReelEmbed = ({ id, title, load }) => {
+  const [ready, setReady] = useState(false);
+  return (
+    <figure className="hm-reel">
+      <div className={ready ? "hm-reel-frame is-ready" : "hm-reel-frame"}>
+        {load && (
+          <iframe
+            src={`https://www.instagram.com/reel/${id}/embed/`}
+            title={title}
+            loading="lazy"
+            allow="encrypted-media; picture-in-picture"
+            allowFullScreen
+            onLoad={() => setReady(true)}
+          />
+        )}
+        <span className="hm-reel-cover" aria-hidden="true">
+          <span className="hm-reel-play">▶</span>
+          <span className="hm-reel-label">Video from her Instagram</span>
+        </span>
+      </div>
+      <figcaption>{title}</figcaption>
+    </figure>
+  );
+};
 
 export const HomeReels = () => {
   const ref = useRef(null);
