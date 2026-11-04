@@ -258,13 +258,13 @@ export default function GrowthCalculator() {
   const months = result && !result.error ? result.months : null;
 
   return (
-    <section className="growth" aria-labelledby="growth-heading">
+    <section data-clarity-mask="True" className="growth" aria-labelledby="growth-heading">
       <h2 className="article-section-heading" id="growth-heading">Where is my child on the growth chart?</h2>
       <p className="article-paragraph">
         Enter today's measurements and see where they fall. Under 5 years this uses the WHO standards, the charts printed in every immunisation card. From 5 to 18 it uses the IAP 2015 charts for Indian children. Nothing you enter leaves this phone.
       </p>
 
-      <div ref={mountRef} className="growth-reader" style={{ "--primary": "var(--color-primary)", "--navy": "var(--color-heading)", "--muted": "var(--color-text)", "--line": "#cfe6e3", "--tint": "var(--color-primary-soft)", "--ink": "var(--color-text)" }} />
+      <div ref={mountRef} data-clarity-mask="True" className="growth-reader" style={{ "--primary": "var(--color-primary)", "--navy": "var(--color-heading)", "--muted": "var(--color-text)", "--line": "#cfe6e3", "--tint": "var(--color-primary-soft)", "--ink": "var(--color-text)" }} />
 
       <div className="growth-form">
         <label><span>Date of birth</span><input id="gc-dob" type="date" value={dob} onChange={(e) => setDob(e.target.value)} max={date} /><DateEcho value={dob} /></label>

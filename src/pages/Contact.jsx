@@ -291,7 +291,7 @@ const Contact = () => {
                   </button>
                 </div>
               ) : (
-                <form className="contact-form" onSubmit={contactHandleSubmit}>
+                <form data-clarity-mask="True" className="contact-form" onSubmit={contactHandleSubmit}>
                   <div className="contact-form-row">
                     <div className="contact-field">
                       <label htmlFor="contact-name">Your name</label>

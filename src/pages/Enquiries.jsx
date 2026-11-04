@@ -98,7 +98,7 @@ const Enquiries = () => {
   };
 
   return (
-    <main className="enquiries-page" id="main-content">
+    <main data-clarity-mask="True" className="enquiries-page" id="main-content">
       <div className="enquiries-container">
         <h1 className="enquiries-title">
           {tab === "reminders" ? "Vaccine reminders" : "Enquiries inbox"}
@@ -116,7 +116,7 @@ const Enquiries = () => {
         )}
 
         {status !== "ready" ? (
-          <form className="enquiries-gate" onSubmit={load}>
+          <form data-clarity-mask="True" className="enquiries-gate" onSubmit={load}>
             <label htmlFor="enquiries-passcode">Passcode</label>
 
             <input

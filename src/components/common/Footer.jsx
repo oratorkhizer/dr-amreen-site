@@ -124,6 +124,21 @@ const Footer = () => {
             a doctor.
           </p>
 
+          <p className="site-footer-small">
+            This site uses Microsoft Clarity to understand how visitors use its
+            pages, through clicks, scrolls and anonymised session replays. All
+            text and form entries are masked, and no health information is
+            collected. See the{" "}
+            <a
+              href="https://privacy.microsoft.com/privacystatement"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Microsoft privacy statement
+            </a>
+            .
+          </p>
+
           <p className="site-footer-credit">
             Made with{" "}
             <span className="site-footer-heart" aria-label="love" role="img">

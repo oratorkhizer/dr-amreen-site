@@ -148,7 +148,7 @@ export default function MilestoneChecker() {
   }
 
   return (
-    <section className="milestones" aria-labelledby="milestones-heading">
+    <section data-clarity-mask="True" className="milestones" aria-labelledby="milestones-heading">
       <h2 className="milestones-heading" id="milestones-heading">Check the milestones</h2>
       <p className="milestones-intro">
         Enter the date of birth, then tick what your child can do today. The

@@ -160,3 +160,9 @@
 .site-footer-social a:hover {
   text-decoration-color: var(--color-primary);
 }
+
+.site-footer-small a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

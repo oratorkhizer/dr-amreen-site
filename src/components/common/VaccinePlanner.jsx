@@ -215,7 +215,7 @@ export default function VaccinePlanner() {
   const listed = plan && !plan.error ? (showAll ? plan.items : plan.current) : [];
 
   return (
-    <section className="planner" id="vaccine-dates" aria-labelledby="planner-heading">
+    <section data-clarity-mask="True" className="planner" id="vaccine-dates" aria-labelledby="planner-heading">
       <h2 className="planner-heading" id="planner-heading">
         Your child's vaccine dates
       </h2>
@@ -323,7 +323,7 @@ export default function VaccinePlanner() {
           )}
 
           {VACCINE_REMINDERS_ENABLED && plan.next && (
-            <form className="planner-remind" onSubmit={signUp}>
+            <form data-clarity-mask="True" className="planner-remind" onSubmit={signUp}>
               <h3>Remind me on WhatsApp</h3>
               <p>
                 The clinic will message you a few days before each visit for{" "}

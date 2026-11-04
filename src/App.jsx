@@ -25,6 +25,7 @@ import ChildHealth from "./pages/ChildHealth";
 import Enquiries from "./pages/Enquiries";
 import NewMothers from "./pages/NewMothers";
 import PhoneBar from "./components/common/PhoneBar";
+import { syncClarity } from "./lib/clarity";
 // Loaded last so the Nov 2026 look wins over older page styles.
 import "./styles/theme.css";
 
@@ -36,6 +37,10 @@ function ScrollToTop() {
       window.history.scrollRestoration = "manual";
     }
   }, []);
+
+  useEffect(() => {
+    syncClarity(pathname);
+  }, [pathname]);
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });

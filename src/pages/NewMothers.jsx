@@ -138,7 +138,7 @@ const NewMothers = () => {
             </button>
           </div>
 
-          <ul className="new-mothers-checklist">
+          <ul data-clarity-mask="True" className="new-mothers-checklist">
             {CHECKLIST.map((item) => (
               <li key={item.id}>
                 <label className={done[item.id] ? "is-done" : ""}>

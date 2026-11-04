@@ -128,7 +128,7 @@ export default function RemindersDesk({ passcode, rows, onChange }) {
   };
 
   return (
-    <section className="reminders">
+    <section data-clarity-mask="True" className="reminders">
       <p className="reminders-help">
         Parents who asked for WhatsApp vaccine reminders. Anyone due within{" "}
         {REMIND_DAYS_BEFORE} days, or overdue by up to 4 weeks, shows under
