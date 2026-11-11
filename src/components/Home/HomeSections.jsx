@@ -94,7 +94,7 @@ export const HomeHero = () => {
             </figcaption>
           </figure>
 
-          <form data-clarity-mask="True" className="hm-vax" onSubmit={showDates} aria-labelledby="hm-vax-title">
+          <form data-clarity-mask="True" data-no-capture className="hm-vax" onSubmit={showDates} aria-labelledby="hm-vax-title">
             <p className="hm-vax-title" id="hm-vax-title">
               Never miss a vaccine
             </p>
