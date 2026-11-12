@@ -7,9 +7,9 @@ export const ROUTES = [
   {
     path: "/",
     title:
-      "Dr. Amreen, Pediatrician in Hyderabad | Caspian Healthcare",
+      "Pediatrician & Child Specialist in Hyderabad | Dr. Amreen",
     description:
-      "Dr. Amreen, MBBS MD Pediatrics, pediatrician at Caspian Healthcare, Vijaynagar Colony, Hyderabad. Newborns, growth, vaccines, illness. Mon to Sat, 3 to 9 pm.",
+      "Child specialist at Caspian Healthcare, Vijaynagar Colony, Hyderabad. MD Pediatrics, gold medallist. Newborns, vaccines, growth. Mon–Sat, 3–9 pm. Book online.",
   },
   {
     path: "/about",
