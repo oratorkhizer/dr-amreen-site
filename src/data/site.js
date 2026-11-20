@@ -156,6 +156,9 @@ export const VACCINE_REMINDERS_ENABLED = true;
 
 export const SUPABASE = {
   url: "https://grxgmheazdfcbortpygr.supabase.co",
+  // Browser calls use this site's own domain (/sbx, a rewrite in vercel.json),
+  // because some Indian networks block supabase.co. Server code keeps `url`.
+  browserUrl: "/sbx/grxgmheazdfcbortpygr",
   anonKey:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdyeGdtaGVhemRmY2JvcnRweWdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkxODI0ODQsImV4cCI6MjEwNDc1ODQ4NH0.UXAotFHAhYPT7SJdq6D5C49v2SOh0889wneQIqzepmI",
   table: "amreen_enquiries",

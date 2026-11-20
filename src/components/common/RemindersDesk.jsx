@@ -49,7 +49,7 @@ function messageFor(row, visit) {
 }
 
 async function rpc(name, body) {
-  const response = await fetch(`${SUPABASE.url}/rest/v1/rpc/${name}`, {
+  const response = await fetch(`${SUPABASE.browserUrl}/rest/v1/rpc/${name}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

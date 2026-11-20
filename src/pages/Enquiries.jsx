@@ -18,7 +18,7 @@ const Enquiries = () => {
   const loadReminders = async (code) => {
     try {
       const response = await fetch(
-        `${SUPABASE.url}/rest/v1/rpc/amreen_reminders_list`,
+        `${SUPABASE.browserUrl}/rest/v1/rpc/amreen_reminders_list`,
         {
           method: "POST",
           headers: {
@@ -42,7 +42,7 @@ const Enquiries = () => {
 
     try {
       const response = await fetch(
-        `${SUPABASE.url}/rest/v1/rpc/${SUPABASE.listFunction}`,
+        `${SUPABASE.browserUrl}/rest/v1/rpc/${SUPABASE.listFunction}`,
         {
           method: "POST",
           headers: {

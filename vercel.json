@@ -2,6 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/build-routes.mjs",
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/sbx/grxgmheazdfcbortpygr/:path*", "destination": "https://grxgmheazdfcbortpygr.supabase.co/:path*" },
+    { "source": "/sbx/gjpbiiqkvzysmdpioexk/:path*", "destination": "https://gjpbiiqkvzysmdpioexk.supabase.co/:path*" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

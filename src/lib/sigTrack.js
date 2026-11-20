@@ -6,7 +6,7 @@ export function installSigTrack() {
   // Scroll-moment analytics: sends to Caspian's own event log, and to GA4 / Vercel if the page has them.
   (function(){
     if (window.sigTrack) return;
-    var URL_ = "https://gjpbiiqkvzysmdpioexk.supabase.co/functions/v1/moment-event";
+    var URL_ = "/sbx/gjpbiiqkvzysmdpioexk/functions/v1/moment-event";
     var sent = {};
     function vid(){ try{ var v=localStorage.getItem("sig-vid"); if(!v){ v=Math.random().toString(36).slice(2)+Date.now().toString(36); localStorage.setItem("sig-vid",v);} return v; }catch(e){ return "anon"; } }
     window.sigTrack = function(site, ev, meta, repeat){
