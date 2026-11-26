@@ -3,8 +3,14 @@
   "buildCommand": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/build-routes.mjs",
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/sbx/grxgmheazdfcbortpygr/:path*", "destination": "https://grxgmheazdfcbortpygr.supabase.co/:path*" },
-    { "source": "/sbx/gjpbiiqkvzysmdpioexk/:path*", "destination": "https://gjpbiiqkvzysmdpioexk.supabase.co/:path*" }
+    {
+      "source": "/sbx/grxgmheazdfcbortpygr/:path*",
+      "destination": "https://grxgmheazdfcbortpygr.supabase.co/:path*"
+    },
+    {
+      "source": "/sbx/gjpbiiqkvzysmdpioexk/:path*",
+      "destination": "https://gjpbiiqkvzysmdpioexk.supabase.co/:path*"
+    }
   ],
   "headers": [
     {
@@ -17,11 +23,29 @@
       ]
     },
     {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
       ]
     }
   ]
