@@ -243,6 +243,20 @@ const About = () => {
                 , a book for new mothers on the first months after birth,
                 published by {BOOK.publisher} in 2025.
               </p>
+
+              <p>
+                Her full CV, with her training, talks and publications, is
+                available as a PDF:{" "}
+                <a
+                  className="about-book-link"
+                  href="/dr-amreen-cv.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Download Dr. Amreen's CV
+                </a>
+                .
+              </p>
             </div>
 
             <div className="about-credentials-list">
@@ -261,6 +275,11 @@ const About = () => {
               <div className="about-credential-item">
                 <span>Recognition</span>
                 <strong>{DOCTOR.honour}</strong>
+              </div>
+
+              <div className="about-credential-item">
+                <span>Membership</span>
+                <strong>Life Member, Indian Academy of Pediatrics</strong>
               </div>
 
               <div className="about-credential-item">
